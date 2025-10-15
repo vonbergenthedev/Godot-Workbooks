@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="M04. To Space and Beyond (Workbook)"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://assets/ship.png"
+
+[autoload]
+
+UITestPanel="*res://addons/gdpractice/tester/ui_test_panel.tscn"
+Metadata="*res://addons/gdpractice/practice_solutions/metadata.gd"
 
 [display]
 
