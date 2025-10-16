@@ -2,3 +2,5 @@ res://addons/gdpractice/assets/theme.tres
 res://lessons/ship.tscn
 res://lessons/ship.gd
 res://practices/L2.P1.bullet/bullet.gd
+res://practices/L3.P1.character_input/character_input.gd
+res://practices/L3.P2.character_diagonals/character_diagonals.gd

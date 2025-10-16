@@ -4,13 +4,20 @@ var max_speed := 600.0
 var velocity := Vector2(0, 0)
 
 func _process(delta: float) -> void:
+	# Get player direction from input
+	# See Project -> Project Settings... -> Input Map
+	# Another option would be .get_vector() but it is normalized by default.
 	var direction := Vector2(0, 0)
 	direction.x = Input.get_axis("move_left", "move_right")
 	direction.y = Input.get_axis("move_up", "move_down")
 	
+	# Normalize the direction if the length of the returned vector from player input if needed
 	if direction.length() > 1.0:
 		direction = direction.normalized()
 	
+	# Update player position and rotate sprite to match
 	velocity = direction * max_speed
 	position +=  velocity * delta
-	rotation = velocity.angle()
+	
+	if direction.length() > 0.0:
+		rotation = velocity.angle()
