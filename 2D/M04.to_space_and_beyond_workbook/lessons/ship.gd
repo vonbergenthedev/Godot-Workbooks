@@ -22,7 +22,6 @@ func _process(delta: float) -> void:
 		max_speed = boost_speed
 		get_node("Timer").start()
 
-	
 	# Update player position and rotate sprite to match
 	var desired_velocity := max_speed * direction
 	var steering_vector := desired_velocity - velocity

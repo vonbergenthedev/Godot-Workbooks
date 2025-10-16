@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="M04. To Space and Beyond (Workbook)"
-run/main_scene="uid://c4vp8u0lafnf3"
+run/main_scene="uid://ca7yleqes5ug7"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://assets/ship.png"
 
@@ -24,7 +24,6 @@ Metadata="*res://addons/gdpractice/practice_solutions/metadata.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=2
 window/size/window_width_override=1152
 window/size/window_height_override=648
 window/stretch/mode="canvas_items"

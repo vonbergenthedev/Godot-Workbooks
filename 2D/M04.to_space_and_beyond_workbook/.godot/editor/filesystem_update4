@@ -2,3 +2,5 @@ res://lessons/space_level.tscn
 res://addons/gdpractice/assets/theme.tres
 res://assets/ship/main_thruster/thruster_material.tres
 res://assets/background/space_material.tres
+res://lessons/ship.gd
+res://assets/background/star_field.gdshader
