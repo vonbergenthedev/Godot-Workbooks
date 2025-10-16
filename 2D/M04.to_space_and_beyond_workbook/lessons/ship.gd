@@ -4,6 +4,7 @@ var normal_speed := 600.0
 var max_speed := normal_speed
 var boost_speed := 1500.0
 var velocity := Vector2(0, 0)
+var steering_factor := 15.0
 
 func _process(delta: float) -> void:
 	# Get player direction from input
@@ -23,7 +24,14 @@ func _process(delta: float) -> void:
 
 	
 	# Update player position and rotate sprite to match
-	velocity = direction * max_speed
+	var desired_velocity := max_speed * direction
+	var steering_vector := desired_velocity - velocity
+	var steering_amount := steering_factor * delta
+	
+	if steering_amount > 1.0:
+		steering_amount = 1.0
+	
+	velocity += steering_vector * steering_amount
 	position +=  velocity * delta
 	
 	if direction.length() > 0.0:
