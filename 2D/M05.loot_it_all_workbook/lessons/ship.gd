@@ -5,6 +5,10 @@ var max_speed := 1200.0
 var velocity := Vector2(0, 0)
 var steering_factor := 3.0
 
+@onready var health_label: ProgressBar = %HealthLabel
+
+func _ready() -> void:
+	health_label.value = 50
 
 func _process(delta: float) -> void:
 	var direction := Vector2(0, 0)
@@ -20,4 +24,4 @@ func _process(delta: float) -> void:
 	position += velocity * delta
 
 	if velocity.length() > 0.0:
-		rotation = velocity.angle()
+		get_node("Sprite2D").rotation = velocity.angle()
