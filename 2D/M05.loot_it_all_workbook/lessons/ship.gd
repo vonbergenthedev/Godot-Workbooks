@@ -13,7 +13,8 @@ func _ready() -> void:
 	area_entered.connect(_on_area_entered)
 	get_node("DamageTimer").timeout.connect(_on_damage_timer_timeout)
 	set_health(ship_health)
-	set_gem_count(gem_count)
+	set_gem_count(gem_count)	
+	
 
 func _process(delta: float) -> void:
 	var direction := Vector2(0, 0)
