@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b27yxfpkfvoha"]
+[gd_scene load_steps=8 format=3 uid="uid://b27yxfpkfvoha"]
 
 [ext_resource type="Shader" uid="uid://lio2wmbue2of" path="res://lessons/chest/group_outline.gdshader" id="1_12as2"]
+[ext_resource type="Script" uid="uid://ct2mll12nooce" path="res://lessons/chest/chest.gd" id="1_65g6b"]
 [ext_resource type="Texture2D" uid="uid://c3hwsm5ugp8qw" path="res://lessons/chest/bottom.png" id="1_bkc6q"]
 [ext_resource type="Texture2D" uid="uid://bnem1cahhoxdk" path="res://lessons/chest/top.png" id="2_12as2"]
 [ext_resource type="Texture2D" uid="uid://bu2jin246nel5" path="res://lessons/chest/lock.png" id="3_65g6b"]
@@ -15,6 +16,7 @@ shader_parameter/viewport_scale = Vector2(1, 1)
 size = Vector2(98, 82)
 
 [node name="Chest" type="Area2D"]
+script = ExtResource("1_65g6b")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 material = SubResource("ShaderMaterial_65g6b")
@@ -35,3 +37,5 @@ texture = ExtResource("3_65g6b")
 visible = false
 position = Vector2(0, -31)
 shape = SubResource("RectangleShape2D_4q7cj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
