@@ -6,3 +6,11 @@ res://lessons/ship.gd
 res://lessons/space_level.tscn
 res://practices/L5.P1.code_an_energy_pack/ship_energy_pack.gd
 res://lessons/health_pack.gd
+res://lessons/gem.tscn
+res://lessons/health_pack.tscn
+res://practices/L6.P1.create_coins/coin.tscn
+res://practices/L6.P1.create_coins/create_coins.tscn
+res://practices/L6.P2.coins_and_energy_packs/coin.tscn
+res://practices/L6.P2.coins_and_energy_packs/energy_pack.tscn
+res://practices/L6.P2.coins_and_energy_packs/coins_and_energy_packs.tscn
+res://practices/L6.P2.coins_and_energy_packs/ship_coins_and_energy_packs.gd
