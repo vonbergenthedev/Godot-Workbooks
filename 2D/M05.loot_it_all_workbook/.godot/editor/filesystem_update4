@@ -14,3 +14,6 @@ res://practices/L6.P2.coins_and_energy_packs/coin.tscn
 res://practices/L6.P2.coins_and_energy_packs/energy_pack.tscn
 res://practices/L6.P2.coins_and_energy_packs/coins_and_energy_packs.tscn
 res://practices/L6.P2.coins_and_energy_packs/ship_coins_and_energy_packs.gd
+res://lessons/random_item_placer.tscn
+res://lessons/random_item_placer.gd
+res://practices/L7.P1.spawn_random_items/random_collectible_placer.gd
