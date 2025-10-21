@@ -1,8 +1,3 @@
 res://lessons/chest/chest.tscn
 res://addons/gdpractice/assets/theme.tres
-res://lessons/chest/chest.gd
-res://lessons/mini_dungeon.tscn
 res://lessons/chest/group_outline.gdshader
-res://practices/L3.P1.hover_the_balloon/balloon_hover.tscn
-res://practices/L3.P1.hover_the_balloon/balloon_hover.gd
-res://practices/L3.P2.sting_the_balloon/balloon_sting.gd
