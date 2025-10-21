@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bu2jin246nel5" path="res://lessons/chest/lock.png" id="3_65g6b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_65g6b"]
+resource_local_to_scene = true
 shader = ExtResource("1_12as2")
 shader_parameter/line_color = Color(0, 0, 0, 1)
 shader_parameter/line_thickness = 4.0
@@ -37,5 +38,3 @@ texture = ExtResource("3_65g6b")
 visible = false
 position = Vector2(0, -31)
 shape = SubResource("RectangleShape2D_4q7cj")
-
-[node name="Camera2D" type="Camera2D" parent="."]
