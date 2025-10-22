@@ -3,3 +3,5 @@ res://addons/gdpractice/assets/theme.tres
 res://lessons/chest/group_outline.gdshader
 res://lessons/chest/chest.gd
 res://practices/L6.P1.the_pinata/balloon_pinata.gd
+res://lessons/items/item.gd
+res://lessons/items/apple.tscn

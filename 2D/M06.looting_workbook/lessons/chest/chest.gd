@@ -41,10 +41,35 @@ func _input_event(viewport: Node, event: InputEvent, shape_index: int) -> void:
 		open()
 
 func _spawn_random_item() -> void:
-	var loot_item: Area2D = possible_items.pick_random().instantiate()
-	add_child(loot_item)
+	const FLIGHT_TIME := 0.4
+	const HALF_FLIGHT_TIME := FLIGHT_TIME / 2.0
 	
-	var random_angle := randf_range(0.0, 2.0 * PI)
-	var random_direction := Vector2(1.0, 0.0).rotated(random_angle)
-	var random_distance := randf_range(30.0, 60.0)
-	loot_item.position = random_direction * random_distance
+	for i in range(randi_range(1, 3)):
+		#Instantiate a random loot item scene and calulate a landing position away from chest sprite
+		# origin
+		var loot_item: Area2D = possible_items.pick_random().instantiate()
+		var random_angle := randf_range(0.0, 2.0 * PI)
+		var random_direction := Vector2(1.0, 0.0).rotated(random_angle)
+		var random_distance := randf_range(60.0, 120.0)
+		var land_position := random_direction * random_distance
+		
+		#Add loot item scene to dungeon scene
+		add_child(loot_item)
+		
+		#Tween to scale loot item from 25% to 100% as it moves to it's x position
+		var tween := create_tween()
+		tween.set_parallel()
+		loot_item.scale = Vector2(0.25, 0.25)
+		tween.tween_property(loot_item, "scale", Vector2(1.0, 1.0), HALF_FLIGHT_TIME)
+		tween.tween_property(loot_item, "position:x", land_position.x, FLIGHT_TIME)
+		
+		#Tween to animate rise and fall using tweens to reach the peak of y value - a random jump
+		# height and
+		tween = create_tween()
+		tween.set_trans(Tween.TRANS_QUAD)
+		tween.set_ease(Tween.EASE_OUT)
+		var jump_height := randf_range(60.0, 120.0)
+		tween.tween_property(loot_item, "position:y", land_position.y - jump_height, HALF_FLIGHT_TIME)
+		tween.set_ease(Tween.EASE_IN)
+		tween.tween_property(loot_item, "position:y", land_position.y, HALF_FLIGHT_TIME)
+		
