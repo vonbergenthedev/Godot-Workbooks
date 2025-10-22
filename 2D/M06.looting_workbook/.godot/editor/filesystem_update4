@@ -2,5 +2,4 @@ res://lessons/chest/chest.tscn
 res://addons/gdpractice/assets/theme.tres
 res://lessons/chest/group_outline.gdshader
 res://lessons/chest/chest.gd
-res://practices/L5.P1.open_the_door/door.gd
-res://practices/L5.P2.pop_the_balloon/balloon_pop.gd
+res://practices/L6.P1.the_pinata/balloon_pinata.gd

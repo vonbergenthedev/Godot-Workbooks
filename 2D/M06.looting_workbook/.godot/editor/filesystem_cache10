@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1761072901
+::res://::1761145708
 icon_looting.png::CompressedTexture2D::3606997955046021701::1758470264::1760996815::1::::<><><>0<>0<>7ce225bfabdfcc19dad6ee3f5a8cc415<>res://.godot/imported/icon_looting.png-355f3c516853ab9609ff066a64ebd0b1.ctex::
 ::res://addons/::1758470264
 ::res://addons/gdpractice/::1758470264
@@ -10,7 +10,7 @@ gdpractice.gd::GDScript::5979087022897298672::1758470264::0::1::::<>EditorPlugin
 metadata.gd::GDScript::2985675861330059244::1758470264::0::1::::<>Node<><>0<>1<><>::
 paths.gd::GDScript::82790454512892745::1758470264::0::1::::<>RefCounted<><>0<>0<><>::
 plugin.cfg::TextFile::-1::1758470264::0::1::::<><><>0<>0<><>::
-::res://addons/gdpractice/assets/::1761058733
+::res://addons/gdpractice/assets/::1761074376
 checkbox_empty.svg::CompressedTexture2D::159996384623349208::1758470264::1760996815::1::::<><><>0<>0<>53bb7d2a866cb16a1a0471a771b4b0d7<>res://.godot/imported/checkbox_empty.svg-670795e6630909b934b40801062ec14f.ctex::
 checkbox_ticked.svg::CompressedTexture2D::4681739381960142151::1758470264::1760996815::1::::<><><>0<>0<>3072ea58afe0e073a60f9898f0f71ce4<>res://.godot/imported/checkbox_ticked.svg-564ad4b3ab0ae5c1e5fc8f01f4337ab7.ctex::
 dash_border.png::CompressedTexture2D::5174105164185721961::1758470264::1760996815::1::::<><><>0<>0<>371e521bb8f2b6b13019e828e8c0006f<>res://.godot/imported/dash_border.png-62c45c79b21ca5931452928502aa8536.ctex::
@@ -19,7 +19,7 @@ input_arrow.svg::CompressedTexture2D::4441352498702649159::1758470264::176099681
 input_mouse_base.svg::CompressedTexture2D::7057538906146452317::1758470264::1760996815::1::::<><><>0<>0<>a625696e0d39362100b6d3e86d40a4d8<>res://.godot/imported/input_mouse_base.svg-dbf80cc9a5deece90e8d05ef17a0c72f.ctex::
 input_mouse_left_click.svg::CompressedTexture2D::3923731288610382921::1758470264::1760996815::1::::<><><>0<>0<>b47916257ec9d9294c46de2a7ec3eb29<>res://.godot/imported/input_mouse_left_click.svg-be147924c06daa7ed438424ff9b7c06d.ctex::
 new_style_box_flat.tres::StyleBoxFlat::2828730235135847896::1758470264::0::1::::<><><>0<>0<><>::
-theme.tres::Theme::3147173487228338806::1761058733::0::1::::<><><>0<>0<><>::uid://d3u2nhkuevn1l::::res://addons/gdpractice/assets/fonts/Inter-Bold.ttf<>uid://deeixt6cs64ak::::res://addons/gdpractice/assets/fonts/Inter-SemiBold.ttf<>uid://b4dj3x16cr0vk::::res://addons/gdpractice/assets/fonts/Inter-ExtraBoldItalic.otf<>uid://btiybsu6acuy7::::res://addons/gdpractice/assets/fonts/Montserrat-Bold.ttf<>uid://h13sewj2ined::::res://addons/gdpractice/assets/fonts/Inter-BoldItalic.otf<>uid://c5j5yg0bc1jec::::res://addons/gdpractice/assets/fonts/Inter-Italic.otf<>uid://bhubmlwupfvt5::::res://addons/gdpractice/assets/fonts/Inter-Medium.ttf
+theme.tres::Theme::3147173487228338806::1761074376::0::1::::<><><>0<>0<><>::uid://d3u2nhkuevn1l::::res://addons/gdpractice/assets/fonts/Inter-Bold.ttf<>uid://deeixt6cs64ak::::res://addons/gdpractice/assets/fonts/Inter-SemiBold.ttf<>uid://b4dj3x16cr0vk::::res://addons/gdpractice/assets/fonts/Inter-ExtraBoldItalic.otf<>uid://btiybsu6acuy7::::res://addons/gdpractice/assets/fonts/Montserrat-Bold.ttf<>uid://h13sewj2ined::::res://addons/gdpractice/assets/fonts/Inter-BoldItalic.otf<>uid://c5j5yg0bc1jec::::res://addons/gdpractice/assets/fonts/Inter-Italic.otf<>uid://bhubmlwupfvt5::::res://addons/gdpractice/assets/fonts/Inter-Medium.ttf
 ::res://addons/gdpractice/assets/fonts/::1760996815
 Inter-Bold.ttf::FontFile::9167500186177253915::1758470264::1760996815::1::::<><><>0<>0<>2757372c7102dc28acb4cde6898256ee<>res://.godot/imported/Inter-Bold.ttf-8d68871aa6b1ad81a20ff97664dd0e9f.fontdata::
 Inter-BoldItalic.otf::FontFile::546728191683957199::1758470264::1760996815::1::::<><><>0<>0<>727278314f12df2533a872f8690f5476<>res://.godot/imported/Inter-BoldItalic.otf-3cddc448bbbebbbbd6abf92d039f40c5.fontdata::
@@ -166,11 +166,11 @@ torch.tscn::PackedScene::322838020226007229::1758470264::0::1::::<><><>0<>0<><>:
 torch_body.png::CompressedTexture2D::9166663288643889627::1758470264::1760996815::1::::<><><>0<>0<>5eb8d382b44ee10d8d75a68a8976d691<>res://.godot/imported/torch_body.png-57a93993dcada801c99cb5ac51ea3233.ctex::
 ::res://lessons/::1761059768
 mini_dungeon.tscn::PackedScene::5375529650740549615::1761059768::0::1::::<><><>0<>0<><>::uid://114x1a0rmx4l::::res://assets/dungeon/smooth_dungeon_tileset.png<>uid://cae527caaj50v::::res://assets/dungeon/shadow_map.png<>uid://dpym64uaptlhb::::res://assets/dungeon/grass_tileset.png<>uid://c1rgncfgjxefj::::res://assets/dungeon/pillar.png<>uid://l0y1k1obencd::::res://assets/dungeon/spider_web.png<>uid://eundh35r605v::::res://assets/torch/torch.tscn<>uid://b27yxfpkfvoha::::res://lessons/chest/chest.tscn
-::res://lessons/chest/::1761059799
+::res://lessons/chest/::1761087235
 bottom.png::CompressedTexture2D::6753948229202366610::1758470264::1760996815::1::::<><><>0<>0<>af1378e4b4d68c43398cb471d5b8a402<>res://.godot/imported/bottom.png-eeb66fda05522d812b33d94d03b9aef3.ctex::
-chest.gd::GDScript::6162916462681044512::1761059334::0::1::::<>Area2D<><>0<>0<><>::
-chest.tscn::PackedScene::4349078117386790686::1761059799::0::1::::<><><>0<>0<><>::uid://lio2wmbue2of::::res://lessons/chest/group_outline.gdshader<>uid://ct2mll12nooce::::res://lessons/chest/chest.gd<>uid://c3hwsm5ugp8qw::::res://lessons/chest/bottom.png<>uid://bnem1cahhoxdk::::res://lessons/chest/top.png<>uid://bu2jin246nel5::::res://lessons/chest/lock.png
-group_outline.gdshader::Shader::789491730508704333::1761059799::0::1::::<><><>0<>0<><>::
+chest.gd::GDScript::6162916462681044512::1761086857::0::1::::<>Area2D<><>0<>0<><>::
+chest.tscn::PackedScene::4349078117386790686::1761087235::0::1::::<><><>0<>0<><>::uid://lio2wmbue2of::::res://lessons/chest/group_outline.gdshader<>uid://ct2mll12nooce::::res://lessons/chest/chest.gd<>uid://c3hwsm5ugp8qw::::res://lessons/chest/bottom.png<>uid://bnem1cahhoxdk::::res://lessons/chest/top.png<>uid://bu2jin246nel5::::res://lessons/chest/lock.png
+group_outline.gdshader::Shader::789491730508704333::1761074376::0::1::::<><><>0<>0<><>::
 lock.png::CompressedTexture2D::3846497220972340828::1758470264::1760996815::1::::<><><>0<>0<>4976f3b51b7008abcbd13d557eb5bd1b<>res://.godot/imported/lock.png-d15abe7731d150e033c3ff89662a0d7d.ctex::
 top.png::CompressedTexture2D::3307908301933165580::1758470264::1760996815::1::::<><><>0<>0<>acbfb116edd6b9a34346136fc44edc25<>res://.godot/imported/top.png-99210f5f9ec52575581251af7ac657be.ctex::
 ::res://lessons/items/::1760996815
@@ -199,9 +199,9 @@ balloon_top.png::CompressedTexture2D::3363448207378884539::1758470264::176099681
 group_outline.gdshader::Shader::3384452996471020335::1758470264::0::1::::<><><>0<>0<><>::
 material.tres::ShaderMaterial::885274898874568645::1758470264::0::1::::<><><>0<>0<><>::res://practices/L3.P2.sting_the_balloon/group_outline.gdshader
 sting_the_balloon.tscn::PackedScene::-1::1758470264::0::1::::<><><>0<>0<><>::res://practices/L3.P2.sting_the_balloon/balloon_sting.tscn<>res://practices/L3.P2.sting_the_balloon/balloon_sting.gd<>res://practices/L3.P2.sting_the_balloon/background.tscn
-::res://practices/L5.P1.open_the_door/::1760996815
+::res://practices/L5.P1.open_the_door/::1761087134
 background.tscn::PackedScene::-1::1758470264::0::1::::<><><>0<>0<><>::
-door.gd::GDScript::8752413213150244838::1758470264::0::1::::<>Area2D<><>0<>0<><>::
+door.gd::GDScript::8752413213150244838::1761087134::0::1::::<>Area2D<><>0<>0<><>::
 door_body.png::CompressedTexture2D::1245177508028889422::1758470264::1760996815::1::::<><><>0<>0<>a44d0141e788bdbd2747099cb719f71b<>res://.godot/imported/door_body.png-971f49b0751dac984fbf95c3e86fec74.ctex::
 door_hinge.png::CompressedTexture2D::1865860484101940457::1758470264::1760996815::1::::<><><>0<>0<>2250037412de7b191da228c7522e178f<>res://.godot/imported/door_hinge.png-bce6b4a649b1f71ba05492f9afebc26e.ctex::
 door_open.tscn::PackedScene::-1::1758470264::0::1::::<><><>0<>0<><>::res://practices/L5.P1.open_the_door/door.gd<>res://practices/L5.P1.open_the_door/material.tres<>res://practices/L5.P1.open_the_door/door_hinge.png<>res://practices/L5.P1.open_the_door/door_body.png
@@ -209,9 +209,9 @@ group_outline.gdshader::Shader::3587467528240263848::1758470264::0::1::::<><><>0
 material.tres::ShaderMaterial::2668896291232647090::1758470264::0::1::::<><><>0<>0<><>::res://practices/L5.P1.open_the_door/group_outline.gdshader
 open_the_door.tscn::PackedScene::-1::1758470264::0::1::::<><><>0<>0<><>::res://practices/L5.P1.open_the_door/door_open.tscn<>res://practices/L5.P1.open_the_door/door.gd<>res://practices/L5.P1.open_the_door/wall.png<>res://practices/L5.P1.open_the_door/background.tscn
 wall.png::CompressedTexture2D::8706841584405331817::1758470264::1760996815::1::::<><><>0<>0<>fa9eee15dfbb408f2161fa09499b3831<>res://.godot/imported/wall.png-fa88ac60c1cfac47440e4ec38f79a82b.ctex::
-::res://practices/L5.P2.pop_the_balloon/::1760996815
+::res://practices/L5.P2.pop_the_balloon/::1761087208
 background.tscn::PackedScene::-1::1758470264::0::1::::<><><>0<>0<><>::
-balloon_pop.gd::GDScript::3996062121420561090::1758470264::0::1::::<>Area2D<><>0<>0<><>::
+balloon_pop.gd::GDScript::3996062121420561090::1761087208::0::1::::<>Area2D<><>0<>0<><>::
 balloon_pop.tscn::PackedScene::-1::1758470264::0::1::::<><><>0<>0<><>::res://practices/L5.P2.pop_the_balloon/balloon_pop.gd<>res://practices/L5.P2.pop_the_balloon/material.tres<>res://practices/L5.P2.pop_the_balloon/balloon_tail.png<>res://practices/L5.P2.pop_the_balloon/balloon_top.png
 balloon_tail.png::CompressedTexture2D::3309974261666873061::1758470264::1760996815::1::::<><><>0<>0<>cde0cd800a429ce70df82abad3a9d7b2<>res://.godot/imported/balloon_tail.png-fbc42db218e99e728251185690d8aa37.ctex::
 balloon_top.png::CompressedTexture2D::1032550238431905944::1758470264::1760996815::1::::<><><>0<>0<>f8abfe71cfdc50d4085c3c74538eee66<>res://.godot/imported/balloon_top.png-9a1b3c12a8612c876b39eda27742c2e2.ctex::
