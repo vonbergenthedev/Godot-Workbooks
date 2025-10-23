@@ -8,6 +8,10 @@ extends Area2D
 func _ready() -> void:
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
+	
+	get_viewport().physics_object_picking_sort = true
+	get_viewport().physics_object_picking_first_only = true
+	
 	set_outline_thickness(3.0)
 
 func set_outline_thickness(new_thickness: float) -> void:

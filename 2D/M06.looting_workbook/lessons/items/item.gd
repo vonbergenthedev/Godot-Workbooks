@@ -31,7 +31,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		var tween := create_tween()
 		var sprite_2d := get_node("Sprite2D")
 		
-		tween.tween_property(sprite_2d, "scale", Vector2(0.0, 0.0), 1.0)
+		tween.tween_property(sprite_2d, "scale", Vector2(0.0, 0.0), 0.25)
 		
 		await tween.finished
 		queue_free()

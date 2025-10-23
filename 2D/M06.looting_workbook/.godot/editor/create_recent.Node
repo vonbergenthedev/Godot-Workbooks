@@ -1,5 +1,5 @@
+CollisionShape2D
+Area2D
 AnimationPlayer
 Camera2D
 CanvasGroup
-CollisionShape2D
-Area2D

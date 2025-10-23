@@ -1,7 +1,6 @@
-res://lessons/chest/chest.tscn
+res://assets/torch/torch.tscn
 res://addons/gdpractice/assets/theme.tres
 res://lessons/chest/group_outline.gdshader
+res://assets/torch/torch.gd
 res://lessons/chest/chest.gd
-res://practices/L6.P1.the_pinata/balloon_pinata.gd
-res://lessons/items/item.gd
-res://lessons/items/apple.tscn
+res://lessons/mini_dungeon.tscn
