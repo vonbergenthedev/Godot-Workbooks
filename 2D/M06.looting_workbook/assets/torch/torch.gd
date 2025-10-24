@@ -8,7 +8,6 @@ func _ready() -> void:
 	input_event.connect(_on_input_event)
 
 
-
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	var event_is_mouse_click: bool = (
 		event is InputEventMouseButton and
