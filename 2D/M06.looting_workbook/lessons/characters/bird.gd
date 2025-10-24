@@ -20,10 +20,12 @@ func _on_timeout() -> void:
 	
 	var tween := create_tween().set_parallel()
 	if bird_sprite.flip_h == false and land_position.x > bird_sprite.position.x:
+		bird_sprite.flip_h = true
 		tween.tween_property(bird_sprite, "position:x", land_position.x, jump_duration)
 		tween.tween_property(shadow, "position", Vector2(land_position.x + 7, land_position.y + 17), jump_duration)
-		bird_sprite.flip_h = true
+
 	else:
+		bird_sprite.flip_h = false
 		tween.tween_property(bird_sprite, "position:x", land_position.x, jump_duration)
 		tween.tween_property(shadow, "position", Vector2(land_position.x - 7, land_position.y + 17), jump_duration)
 		bird_sprite.flip_h = false
