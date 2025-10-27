@@ -27,9 +27,10 @@ func show_text() -> void:
 
 
 func _on_next_button_press() -> void:
-	if current_dialogue_item_index < dialogue_items.size() - 1:
-		current_dialogue_item_index += 1
-		show_text()
+	current_dialogue_item_index += 1
+	if current_dialogue_item_index > dialogue_items.size() - 1:
+		current_dialogue_item_index = 0
+	show_text()
 
 
 func _on_previous_button_press() -> void:
