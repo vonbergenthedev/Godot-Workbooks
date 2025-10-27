@@ -12,3 +12,5 @@ res://lessons/button_black.tres
 res://lessons/button_orange.tres
 res://lessons/button_disabled_gray.tres
 res://lessons/button_dark_green.tres
+res://lessons/dialogue.tscn
+res://lessons/dialogue.gd
