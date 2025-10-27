@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cbgrjujl7ssfj"]
+[gd_scene load_steps=6 format=3 uid="uid://cbgrjujl7ssfj"]
 
-[ext_resource type="Texture2D" uid="uid://ogu21ixgdm50" path="res://assets/test.svg" id="1_kp46k"]
+[ext_resource type="Shader" uid="uid://cs15e2hgd2lan" path="res://assets/sliding_background.gdshader" id="1_hoxo3"]
+[ext_resource type="Texture2D" uid="uid://bnly1gkbxw6b5" path="res://assets/bubble_pattern.png" id="2_q2h7b"]
+[ext_resource type="Texture2D" uid="uid://copkt78vgp37i" path="res://assets/sophia.png" id="3_iq77p"]
+[ext_resource type="Texture2D" uid="uid://d000xjtr4iqtk" path="res://assets/emotion_regular.png" id="4_iqg0b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xvgdd"]
+shader = ExtResource("1_hoxo3")
+shader_parameter/pattern_sampler = ExtResource("2_q2h7b")
+shader_parameter/bg_color = Color(1, 1, 0.627451, 1)
+shader_parameter/pattern_color = Color(1, 0.9019608, 0.5294118, 1)
+shader_parameter/pattern_size = 256.0
 
 [node name="Dialogue" type="Control"]
 layout_mode = 3
@@ -10,23 +20,51 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_xvgdd")
 layout_mode = 1
-offset_right = 480.0
-offset_bottom = 270.0
-texture = ExtResource("1_kp46k")
-expand_mode = 1
-
-[node name="TextureRect2" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -480.0
-offset_top = -270.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("1_kp46k")
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Body" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 70.0
+offset_top = 378.0
+offset_right = -53.0
+texture = ExtResource("3_iq77p")
 expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="Body"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = 52.0
+offset_right = -49.230774
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_iqg0b")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.588
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 29.04004
+offset_top = 539.0
+offset_right = -473.0
+offset_bottom = -501.0
+text = "TESTSETASETASETESTEST"
