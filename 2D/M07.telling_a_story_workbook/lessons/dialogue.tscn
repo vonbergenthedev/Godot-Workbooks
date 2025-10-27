@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbgrjujl7ssfj"]
+[gd_scene load_steps=9 format=3 uid="uid://cbgrjujl7ssfj"]
 
 [ext_resource type="Theme" uid="uid://drays61pfu7xc" path="res://lessons/main_theme.tres" id="1_6cfwb"]
 [ext_resource type="Script" uid="uid://cvyjtb2pbe8s4" path="res://lessons/dialogue.gd" id="2_nggfo"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bnly1gkbxw6b5" path="res://assets/bubble_pattern.png" id="4_xlxck"]
 [ext_resource type="Texture2D" uid="uid://copkt78vgp37i" path="res://assets/sophia.png" id="5_ujubm"]
 [ext_resource type="Texture2D" uid="uid://d000xjtr4iqtk" path="res://assets/emotion_regular.png" id="6_rjbgl"]
+[ext_resource type="AudioStream" uid="uid://bafjgt7eu3x5a" path="res://assets/talking_synth.ogg" id="7_nggfo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xvgdd"]
 shader = ExtResource("3_rduj4")
@@ -107,3 +108,7 @@ offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Previous"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("7_nggfo")
