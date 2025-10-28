@@ -3,11 +3,8 @@ extends Control
 
 @onready var body: TextureRect = %Body
 @onready var expression: TextureRect = %Expression
-@onready var button_sophia: Button = %ButtonSophia
-@onready var button_pink: Button = %ButtonPink
-@onready var button_regular: Button = %ButtonRegular
-@onready var button_sad: Button = %ButtonSad
-@onready var button_happy: Button = %ButtonHappy
+@onready var row_bodies: HBoxContainer = $VBoxContainer/RowBodies
+@onready var row_expressions: HBoxContainer = $VBoxContainer/RowExpressions
 
 
 var bodies_dict := {
@@ -24,12 +21,30 @@ var expressions_dict := {
 
 
 func _ready() -> void:
-	body.texture = bodies_dict["pink"]
+	body.texture = bodies_dict["sophia"]
 	expression.texture = expressions_dict["happy"]
 	
-	button_sophia.pressed.connect(func() -> void: body.texture = bodies_dict["sophia"])
-	button_pink.pressed.connect(func() -> void: body.texture = bodies_dict["pink"])
-	button_regular.pressed.connect(func() -> void: expression.texture = expressions_dict["regular"])
-	button_sad.pressed.connect(func() -> void: expression.texture = expressions_dict["sad"])
-	button_happy.pressed.connect(func() -> void: expression.texture = expressions_dict["happy"])
+	create_buttons()
 	
+
+func create_buttons() -> void:
+	
+	for current_body: String in bodies_dict:
+		var button := Button.new()
+		button.text = current_body.capitalize()
+		
+		button.pressed.connect(func() -> void:
+			body.texture = bodies_dict[current_body]
+		)
+
+		row_bodies.add_child(button)
+		
+	for current_expression in expressions_dict:
+		var button := Button.new()
+		button.text = current_expression.capitalize()
+		
+		button.pressed.connect(func() -> void:
+			expression.texture = expressions_dict[current_expression]
+		)
+		
+		row_expressions.add_child(button)
