@@ -30,25 +30,25 @@ var voices_dict := {
 var dialogue_items: Array[Dictionary] = [
 	{
 		"expression": expressions_dict["regular"],
-		"text": "I've been studying arrays and dictionaries lately.",
+		"text": "I've been studying [i]arrays [b]and[/b] dictionaries[/i] lately.",
 		"body": bodies_dict["sophia"],
 		"voice": voices_dict["voice_1"],
 	},
 	{
 		"expression": expressions_dict["regular"],
-		"text": "Oh, nice. How has it been going?",
+		"text": "[wave]Oh, nice.[/wave] How has it been going?",
 		"body": bodies_dict["pink"],
 		"voice": voices_dict["voice_2"],
 	},
 	{
 		"expression": expressions_dict["sad"],
-		"text": "Well... it's a little complicated!",
+		"text": "Well... it's a little [i]complicated![/i]",
 		"body": bodies_dict["sophia"],
 		"voice": voices_dict["voice_1"],
 	},
 	{
 		"expression": expressions_dict["sad"],
-		"text": "Oh!",
+		"text": "[tornado val=5.0]Oh![/tornado]",
 		"body": bodies_dict["pink"],
 		"voice": voices_dict["voice_2"],
 	},
@@ -66,13 +66,13 @@ var dialogue_items: Array[Dictionary] = [
 	},
 	{
 		"expression": expressions_dict["regular"],
-		"text": "Mhhh... I see. I'll keep at it, then.",
+		"text": "Mhhh... I [u]see[/u]. I'll keep at it, then.",
 		"body": bodies_dict["sophia"],
 		"voice": voices_dict["voice_1"],
 	},
 	{
 		"expression": expressions_dict["happy"],
-		"text": "Thanks for the encouragement. Time to LEARN!!!",
+		"text": "[rainbow val=0.9]Thanks for the encouragement.[/rainbow] Time to LEARN!!!",
 		"body": bodies_dict["sophia"],
 		"voice": voices_dict["voice_1"],
 	},
@@ -93,7 +93,7 @@ func show_text() -> void:
 	audio_stream_player.stream = dialogue_items[current_dialogue_item_index]["voice"]
 	
 	var tween := create_tween()
-	var text_appearing_duration: float = dialogue_items[current_dialogue_item_index]["text"].length()/ 45.0
+	var text_appearing_duration: float = rich_text_label.get_parsed_text().length() / 45.0
 	tween.tween_property(rich_text_label, "visible_ratio", 1.0, text_appearing_duration)
 	
 	var sound_max_offset := audio_stream_player.stream.get_length() - text_appearing_duration
