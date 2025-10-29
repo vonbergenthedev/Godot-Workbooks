@@ -1,6 +1,7 @@
 extends Control
 
-
+@onready var body: TextureRect = %Body
+@onready var expression: TextureRect = %Expression
 @onready var rich_text_label: RichTextLabel = %RichTextLabel
 @onready var next_button: Button = %NextButton
 @onready var previous_button: Button = %PreviousButton
@@ -8,12 +9,40 @@ extends Control
 
 
 var current_dialogue_item_index := 0
-var dialogue_items: Array[String] = [
-	"I'm learning about Arrays...",
-	"...and it is a little bit complicated.",
-	"Let's see if I got it right: an array is a list of values!",
-	"Did I get it right? Did I?",
-	"Hehe! Bye bye~!",
+
+var expressions_dict := {
+	 "happy": preload("res://assets/emotion_happy.png"),
+	 "regular": preload("res://assets/emotion_regular.png"),
+	 "sad": preload("res://assets/emotion_sad.png"),
+}
+
+var dialogue_items: Array[Dictionary] = [
+	{
+		"expression": expressions_dict["regular"],
+		"text": "I'm learning about Arrays...",
+	},
+	
+	{
+		"expression": expressions_dict["sad"],
+		"text": "...and it is a little bit complicated.",
+	},
+	
+	{
+		"expression": expressions_dict["happy"],
+		"text": "Let's see if I got it right: an array is a list of values!",
+	},
+	
+	{
+		"expression": expressions_dict["regular"],
+		"text": "Did I get it right? Did I?",
+	},
+	
+	{
+		"expression": expressions_dict["happy"],
+		"text": "Hehe! Bye bye~!",
+		
+	},
+	
 ]
 
 
@@ -25,7 +54,8 @@ func _ready() -> void:
 
 func show_text() -> void:
 	rich_text_label.visible_ratio = 0.0
-	rich_text_label.text = dialogue_items[current_dialogue_item_index]
+	rich_text_label.text = dialogue_items[current_dialogue_item_index]["text"]
+	expression.texture = dialogue_items[current_dialogue_item_index]["expression"]
 	
 	var tween := create_tween()
 	var text_appearing_duration := 0.5
