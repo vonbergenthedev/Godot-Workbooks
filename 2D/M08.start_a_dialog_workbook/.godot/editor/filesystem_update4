@@ -2,5 +2,9 @@ res://lessons/slideshow.tscn
 res://addons/gdpractice/assets/theme.tres
 res://assets/practices/practices_theme.tres
 res://assets/main_theme.tres
+res://lessons/dialogue_entry.gd
+res://lessons/dialogue_item.gd
 res://lessons/slideshow.gd
+res://lessons/dialogue.gd
+res://lessons/dialogue_choice.gd
 res://lessons/slideshow_entry.gd

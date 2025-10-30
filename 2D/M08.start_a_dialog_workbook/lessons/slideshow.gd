@@ -1,7 +1,7 @@
 extends Control
 
 
-@export var dialogue_items: Array[SlideShowEntry] = []
+@export var dialogue_items: Array[DialogueItem] = []
 
 ## UI element that shows the texts
 @onready var rich_text_label: RichTextLabel = %RichTextLabel
@@ -29,7 +29,7 @@ func show_text() -> void:
 	# from the item, we extract the properties.
 	# We set the text to the rich text control
 	# And we set the appropriate expression texture
-	rich_text_label.text = current_item.text
+	rich_text_label.text = current_item.dialogue_item.text
 	expression.texture = current_item.expression
 	body.texture = current_item.character_texture
 	# We set the initial visible ratio to the text to 0, so we can change it in the tween
@@ -39,7 +39,7 @@ func show_text() -> void:
 	# A variable that holds the amount of time for the text to show, in seconds
 	# We could write this directly in the tween call, but this is clearer.
 	# We will also use this for deciding on the sound length
-	var text_appearing_duration := (current_item["text"] as String).length() / 30.0
+	var text_appearing_duration := (current_item.dialogue_item.text as String).length() / 30.0
 	# We show the text slowly
 	tween.tween_property(rich_text_label, "visible_ratio", 1.0, text_appearing_duration)
 	# We randomize the audio playback's start time to make it sound different
@@ -53,18 +53,24 @@ func show_text() -> void:
 	# We make sure the sound stops when the text finishes displaying
 	tween.finished.connect(audio_stream_player.stop)
 	slide_in()
+	
+	if current_item.dialogue_item.is_quit == true:
+		tween.finished.connect(get_tree().quit)
+	
+	else:
+		current_item_index = current_item.dialogue_item.target_line_idx
 
 
 ## Progresses to the next slide.
 func advance() -> void:
 	# We increment the slide amount by 1
-	current_item_index += 1
-	if current_item_index == dialogue_items.size():
-		# if we reached the last slide, quit
-		get_tree().quit()
-	else:
-		# otherwise, show the text
-		show_text()
+	#current_item_index += 1
+	#if current_item_index == dialogue_items.size():
+		## if we reached the last slide, quit
+		#get_tree().quit()
+	#else:
+		## otherwise, show the text
+	show_text()
 
 
 ## Animates the character when they start talking
