@@ -18,61 +18,57 @@ var bodies := {
 var dialogue_items: Array[Dictionary] = [
 	{
 		"expression": expressions["regular"],
-		"text": "I've been learning about [wave]Arrays and Dictionaries[/wave]",
-		"character": bodies["sophia"]
-	},
-	{
-		"expression": expressions["regular"],
-		"text": "How has it been going?",
-		"character": bodies["pink"]
-	},
-	{
-		"expression": expressions["sad"],
-		"text": "... Well... it is a little bit [shake]complicated[/shake]!",
-		"character": bodies["sophia"]
-	},
-	{
-		"expression": expressions["sad"],
-		"text": "Oh!",
-		"character": bodies["pink"]
-	},
-	{
-		"expression": expressions["regular"],
-		"text": "I believe in you!",
-		"character": bodies["pink"]
+		"text": "[wave]Hey, wake up![/wave]\nIt's time to make video games.",
+		"character": bodies["sophia"],
+		"choices": {
+			"Let me sleep a little longer": 2,
+			"Let's do it!": 1,
+		},
 	},
 	{
 		"expression": expressions["happy"],
-		"text": "If you stick to it, you'll eventually make it!",
-		"character": bodies["pink"]
+		"text": "Great! Your first task will be to write a [b]dialogue tree[/b].",
+		"character": bodies["sophia"],
+		"choices": {
+			"I will do my best": 3,
+			"No, let me go back to sleep": 2,
+		},
+	},
+	{
+		"expression": expressions["sad"],
+		"text": "Oh, come on! It'll be fun.",
+		"character": bodies["pink"],
+		"choices": {
+			"No, really, let me go back to sleep": 0,
+			"Alright, I'll try": 1,
+		},
 	},
 	{
 		"expression": expressions["happy"],
-		"text": "That's it! Let's [tornado freq=3.0][rainbow val=1.0]GOOOOOO!!![/rainbow][/tornado]",
-		"character": bodies["sophia"]
-	}
+		"text": "That's the spirit! [wave]You can do it![/wave]",
+		"character": bodies["pink"],
+		"choices": {"Okay! (Quit)": - 1},
+	},
 ]
-var current_item_index := 0
 
 ## UI element that shows the texts
 @onready var rich_text_label: RichTextLabel = %RichTextLabel
-## UI element that progresses to the next text
-@onready var next_button: Button = %NextButton
 ## Audio player that plays voice sounds while text is being written
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 ## The character
 @onready var body: TextureRect = %Body
 ## The Expression
 @onready var expression: TextureRect = %Expression
+## Container holding dialogue response choices
+@onready var action_buttons_v_box_container: VBoxContainer = %ActionButtonsVBoxContainer
 
 
 func _ready() -> void:
-	show_text()
-	next_button.pressed.connect(advance)
+	show_text(0)
 
 
 ## Draws the current text to the rich text element
-func show_text() -> void:
+func show_text(current_item_index: int) -> void:
 	# We retrieve the current item from the array
 	var current_item := dialogue_items[current_item_index]
 	# from the item, we extract the properties.
@@ -81,6 +77,7 @@ func show_text() -> void:
 	rich_text_label.text = current_item["text"]
 	expression.texture = current_item["expression"]
 	body.texture = current_item["character"]
+	create_buttons(current_item["choices"])
 
 	# We set the initial visible ratio to the text to 0, so we can change it in the tween
 	rich_text_label.visible_ratio = 0.0
@@ -106,23 +103,17 @@ func show_text() -> void:
 	# We animate the character sliding in.
 	slide_in()
 
+
 	# Finally, we disable the next button until the text finishes displaying.
-	next_button.disabled = true
+	for button: Button in action_buttons_v_box_container.get_children():
+		button.disabled = true
+		button.modulate.a = 0.0
 	tween.finished.connect(func() -> void:
-		next_button.disabled = false
+		var button_tween := create_tween()
+		for button: Button in action_buttons_v_box_container.get_children():
+			button.disabled = false
+			button_tween.tween_property(button, "modulate:a", 1.0, 0.25)
 	)
-
-
-## Progresses to the next slide.
-func advance() -> void:
-	# We increment the slide amount by 1
-	current_item_index += 1
-	if current_item_index == dialogue_items.size():
-		# if we reached the last slide, quit
-		get_tree().quit()
-	else:
-		# otherwise, show the text
-		show_text()
 
 
 ## Animates the character when they start talking
@@ -133,3 +124,20 @@ func slide_in() -> void:
 	slide_tween.tween_property(body, "position:x", 0, 0.3)
 	body.modulate.a = 0
 	slide_tween.parallel().tween_property(body, "modulate:a", 1, 0.2)
+
+
+func create_buttons(buttons_choices_dict: Dictionary) -> void:
+	for button in action_buttons_v_box_container.get_children():
+		button.queue_free()
+	
+	for choice_text in buttons_choices_dict:
+		var button = Button.new()
+		action_buttons_v_box_container.add_child(button)
+		button.text = choice_text
+		
+		var target_line_idx: int = buttons_choices_dict[choice_text]
+	
+		if target_line_idx == -1:
+			button.pressed.connect(get_tree().quit)
+		else:
+			button.pressed.connect(show_text.bind(target_line_idx))
