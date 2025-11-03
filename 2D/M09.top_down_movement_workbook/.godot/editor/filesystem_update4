@@ -1,6 +1,3 @@
-res://addons/gdpractice/assets/theme.tres
 res://lessons/runner.tscn
+res://addons/gdpractice/assets/theme.tres
 res://lessons/runner.gd
-res://lessons/test_background.tscn
-res://practices/L2.P1.asteroid_field/moving_ship.gd
-res://practices/L2.P1.asteroid_field/asteroid_field.tscn
