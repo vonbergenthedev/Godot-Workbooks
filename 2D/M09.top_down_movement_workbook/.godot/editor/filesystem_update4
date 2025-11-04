@@ -1,3 +1,5 @@
-res://lessons/runner.tscn
 res://addons/gdpractice/assets/theme.tres
-res://lessons/runner.gd
+res://lessons/simple_obstable.tscn
+res://lessons/test_background.tscn
+res://lessons/circuit.tscn
+res://lessons/game.tscn
