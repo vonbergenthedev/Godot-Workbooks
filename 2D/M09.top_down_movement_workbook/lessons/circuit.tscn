@@ -7,7 +7,7 @@
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_3x62h")
 
-[node name="InnerLevelCollisionCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="InnerLevelCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-224, -256, -576, 32, -576, 416, -800, 640, -992, 640, -1216, 416, -1216, -224, -736, -704, 480, -704, 736, -448, 992, -448, 1216, -224, 1216, 416, 992, 640, 800, 640, 576, 416, 576, 32, 288, -256)
 
 [node name="OuterLevelTopHalfCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
