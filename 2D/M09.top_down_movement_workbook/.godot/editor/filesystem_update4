@@ -1,5 +1,4 @@
+res://lessons/runner.tscn
 res://addons/gdpractice/assets/theme.tres
-res://lessons/simple_obstable.tscn
-res://lessons/test_background.tscn
-res://lessons/circuit.tscn
-res://lessons/game.tscn
+res://lessons/runner.gd
+res://practices/L4.P1.bumping_in_wall/bumping_in_walls.tscn

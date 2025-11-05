@@ -18,13 +18,13 @@ position = Vector2(0, -67)
 [node name="Camera2D" type="Camera2D" parent="Runner"]
 
 [node name="SimpleObstable" parent="." instance=ExtResource("3_sepuf")]
-position = Vector2(384, 247)
+position = Vector2(387, 247)
 
 [node name="SimpleObstable2" parent="." instance=ExtResource("3_sepuf")]
-position = Vector2(801, 789)
+position = Vector2(902, 777)
 
 [node name="SimpleObstable3" parent="." instance=ExtResource("3_sepuf")]
-position = Vector2(1280, 126)
+position = Vector2(1283, 126)
 
 [node name="Circuit" parent="." instance=ExtResource("4_gkp25")]
 z_index = -1
