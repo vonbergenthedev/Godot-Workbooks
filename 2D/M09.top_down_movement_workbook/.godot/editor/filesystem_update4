@@ -1,3 +1,5 @@
 res://addons/gdpractice/assets/theme.tres
 res://assets/character_contour.gdshader
 res://lessons/test_particles.tscn
+res://lessons/runner.tscn
+res://lessons/runner.gd

@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var deceleration := 1080.0
 
 @onready var _runner_visual_red: RunnerVisual = %RunnerVisualRed
+@onready var dirt: GPUParticles2D = %Dirt
 
 
 func _physics_process(delta: float) -> void:
@@ -22,9 +23,11 @@ func _physics_process(delta: float) -> void:
 		_runner_visual_red.angle = rotate_toward(_runner_visual_red.angle, direction.orthogonal().angle(), 8.0 * delta)
 		var current_speed_percent := velocity.length() / max_speed
 		_runner_visual_red.animation_name = (RunnerVisual.Animations.WALK if current_speed_percent < 0.8 else RunnerVisual.Animations.RUN)
+		dirt.emitting = true
 			
 	else:
 		if velocity.length() < 20.0:
 			_runner_visual_red.animation_name = RunnerVisual.Animations.IDLE
+			dirt.emitting = false
 	
 	move_and_slide()
