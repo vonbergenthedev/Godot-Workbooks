@@ -1,0 +1,28 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bvgpigvbfm5vj"]
+
+[ext_resource type="FontFile" uid="uid://vxbfcnef0pvq" path="res://assets/fonts/rubik/Rubik-Bold.ttf" id="1_7eso2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7eso2"]
+content_margin_left = 20.0
+content_margin_top = 10.0
+content_margin_right = 20.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dgyix"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.1584723, 0.15847233, 0.1584723, 0.8627451)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[resource]
+default_font = ExtResource("1_7eso2")
+Button/font_sizes/font_size = 42
+Button/styles/normal = SubResource("StyleBoxFlat_7eso2")
+Label/font_sizes/font_size = 64
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_dgyix")

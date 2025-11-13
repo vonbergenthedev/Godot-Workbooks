@@ -73,3 +73,5 @@ process_material = SubResource("ParticleProcessMaterial_agra7")
 material = SubResource("ShaderMaterial_x5rx3")
 position = Vector2(0, -49)
 texture = SubResource("ViewportTexture_ipi7s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
