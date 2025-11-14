@@ -20,6 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_6f8pp")
 script = ExtResource("2_qb0gi")
+animation_duration = null
 
 [node name="BlurColorRect" type="ColorRect" parent="."]
 unique_name_in_owner = true

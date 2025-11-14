@@ -30,6 +30,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		if velocity.length() < 50.0:
 			_runner_visual_red.animation_name = RunnerVisual.Animations.IDLE
+			_dust.emitting = false
 	
 	move_and_slide()
 
