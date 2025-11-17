@@ -2,15 +2,24 @@ extends Node2D
 
 @onready var _finish_line: FinishLine = %FinishLine
 @onready var _runner: Runner = %Runner
+@onready var _bouncer: CharacterBody2D = %Bouncer
 @onready var _count_down: CountDown = %CountDown
+@onready var _bouncer_timer: Timer = $BouncerTimer
+
+var current_bouncer_max_speed := 100.0
 
 func _ready() -> void:
 	_runner.set_physics_process(false)
+	_bouncer.set_physics_process(false)
 	_count_down.start_counting()
 	
 	_count_down.counting_finished.connect(
 		func () -> void:
 			_runner.set_physics_process(true)
+			_bouncer_timer.start()
+			_bouncer_timer.timeout.connect(func() -> void: 
+				_bouncer.set_physics_process(true)
+				)
 			)
 	
 	_finish_line.body_entered.connect(
@@ -35,3 +44,6 @@ func _ready() -> void:
 		get_tree().reload_current_scene.call_deferred
 	)
 	
+func _physics_process(delta: float) -> void:
+	
+	_bouncer.max_speed = 

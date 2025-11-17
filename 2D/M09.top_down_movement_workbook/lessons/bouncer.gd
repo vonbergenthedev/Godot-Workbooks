@@ -6,10 +6,18 @@ extends CharacterBody2D
 
 @onready var _runner_visual_purple: RunnerVisual = %RunnerVisualPurple
 @onready var _dust: GPUParticles2D = %Dust
+@onready var _hit_box: Area2D = $HitBox
+
+
+func _ready() -> void:
+	_hit_box.body_entered.connect(func(body: Node) -> void:
+		if body is Runner:
+			get_tree().reload_current_scene.call_deferred()
+	)
 
 func _physics_process(delta: float) -> void:
-	var direction_to_target := global_position.direction_to(get_global_mouse_position())
-	var distance_to_target := global_position.distance_to(get_global_mouse_position())
+	var direction_to_target := global_position.direction_to(get_global_player_position())
+	var distance_to_target := global_position.distance_to(get_global_player_position())
 	var speed := max_speed if distance_to_target > 100 else max_speed * distance_to_target / 100
 	var desired_velocity := direction_to_target * speed
 	
@@ -23,6 +31,9 @@ func _physics_process(delta: float) -> void:
 		_runner_visual_purple.animation_name = (RunnerVisual.Animations.WALK if current_speed_percent < 0.8 else RunnerVisual.Animations.RUN)
 		_dust.emitting = true
 		
-	else:
+	if distance_to_target < 50.0:
 		_runner_visual_purple.animation_name = RunnerVisual.Animations.IDLE
 		_dust.emitting = false
+
+func get_global_player_position() -> Vector2:
+	return get_tree().root.get_node("Game/Runner").global_position

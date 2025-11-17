@@ -25,6 +25,7 @@ unique_name_in_owner = true
 position = Vector2(960, 590)
 
 [node name="Bouncer" parent="." instance=ExtResource("4_8c4bg")]
+unique_name_in_owner = true
 position = Vector2(525, 784)
 
 [node name="SimpleObstable" parent="." instance=ExtResource("3_sepuf")]
@@ -72,3 +73,6 @@ metadata/_custom_type_script = "uid://57e8080cpukf"
 process_mode = 3
 visible = false
 animation_duration = 2.3
+
+[node name="BouncerTimer" type="Timer" parent="."]
+one_shot = true
