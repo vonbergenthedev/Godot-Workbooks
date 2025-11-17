@@ -1,3 +1,5 @@
+RunnerVisual
+Control
 Button
 VBoxContainer
 CenterContainer
@@ -5,11 +7,9 @@ Label
 PanelContainer
 ColorRect
 Camera2D
-Control
 CanvasLayer
 CountDown
 FinishLine
 GPUParticles2D
 Node2D
 Sprite2D
-SubViewport

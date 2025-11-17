@@ -1,9 +1,8 @@
-res://lessons/game.tscn
+res://lessons/bouncer.tscn
 res://addons/gdpractice/assets/theme.tres
 res://assets/character_contour.gdshader
 res://lessons/runner_game.tres
 res://assets/blur.gdshader
-res://lessons/pause_screen.gd
-res://lessons/runner.gd
+res://lessons/bouncer.gd
+res://lessons/game.tscn
 res://lessons/runner.tscn
-res://lessons/pause_screen.tscn
