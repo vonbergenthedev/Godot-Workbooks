@@ -22,11 +22,11 @@ texture = ExtResource("1_4o7yg")
 
 [node name="Runner" parent="." instance=ExtResource("2_gkp25")]
 unique_name_in_owner = true
-position = Vector2(960, 590)
+position = Vector2(-370, 1004)
 
 [node name="Bouncer" parent="." instance=ExtResource("4_8c4bg")]
 unique_name_in_owner = true
-position = Vector2(525, 784)
+position = Vector2(-382, 550)
 
 [node name="SimpleObstable" parent="." instance=ExtResource("3_sepuf")]
 position = Vector2(1346, 904)

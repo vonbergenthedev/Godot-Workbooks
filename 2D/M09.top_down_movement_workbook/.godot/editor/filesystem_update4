@@ -4,3 +4,6 @@ res://assets/character_contour.gdshader
 res://lessons/runner_game.tres
 res://assets/blur.gdshader
 res://lessons/game.gd
+res://lessons/bouncer.gd
+res://lessons/bouncer.tscn
+res://lessons/runner.gd

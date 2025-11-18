@@ -1,6 +1,5 @@
 class_name Runner extends CharacterBody2D
 
-
 signal walked_to
 
 @export var max_speed := 600.0
@@ -9,7 +8,6 @@ signal walked_to
 
 @onready var _runner_visual_red: RunnerVisual = %RunnerVisualRed
 @onready var _dust: GPUParticles2D = %Dust
-
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -50,4 +48,3 @@ func walk_to(destination_global_position: Vector2) -> void:
 		_dust.emitting = false
 		walked_to.emit()
 	)
-	
