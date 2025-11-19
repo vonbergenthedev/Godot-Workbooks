@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
-@export var max_speed := 400.0
+@export var max_speed := 590.0
 @export var acceleration := 1200.0
 @export var deceleration := 1080.0
+@export var avoidance_strength := 21000.0
 
 @onready var _runner_visual_purple: RunnerVisual = %RunnerVisualPurple
 @onready var _dust: GPUParticles2D = %Dust
 @onready var _hit_box: Area2D = $HitBox
+@onready var _raycasts: Node2D = %Raycasts
 
 func _ready() -> void:
 	make_idle()
@@ -21,6 +23,7 @@ func _physics_process(delta: float) -> void:
 	var distance_to_target := global_position.distance_to(get_global_player_position())
 	var speed := max_speed if distance_to_target > 100 else max_speed * distance_to_target / 100
 	var desired_velocity := direction_to_target * speed
+	desired_velocity += calculate_avoidant_force() * delta
 	
 	velocity = velocity.move_toward(desired_velocity, acceleration * delta)
 
@@ -28,6 +31,7 @@ func _physics_process(delta: float) -> void:
 	
 	if velocity.length() > 50.0:
 		_runner_visual_purple.angle = rotate_toward(_runner_visual_purple.angle, direction_to_target.orthogonal().angle(), 8.0 * delta)
+		_raycasts.rotation = _runner_visual_purple.angle
 		var current_speed_percent := velocity.length() / max_speed
 		_runner_visual_purple.animation_name = (RunnerVisual.Animations.WALK if current_speed_percent < 0.8 else RunnerVisual.Animations.RUN)
 		_dust.emitting = true
@@ -43,3 +47,18 @@ func get_global_player_position() -> Vector2:
 func make_idle() -> void:
 	_runner_visual_purple.animation_name = RunnerVisual.Animations.IDLE
 	_dust.emitting = false
+
+func calculate_avoidant_force() -> Vector2:
+	var a_force := Vector2.ZERO
+	
+	for raycast: RayCast2D in _raycasts.get_children():
+		if raycast.is_colliding():
+			var collision_position := raycast.get_collision_point()
+			var direction_away_from_obstacle := collision_position.direction_to(raycast.global_position)
+			var ray_length := raycast.target_position.length()
+			var intensity := 1.0 - collision_position.distance_to(raycast.global_position) / ray_length
+			var force := direction_away_from_obstacle * avoidance_strength * intensity
+			
+			a_force += force
+	
+	return a_force

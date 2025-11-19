@@ -1,9 +1,8 @@
-res://lessons/game.tscn
 res://addons/gdpractice/assets/theme.tres
 res://assets/character_contour.gdshader
 res://lessons/runner_game.tres
 res://assets/blur.gdshader
-res://lessons/game.gd
+res://lessons/raycast_test.tscn
 res://lessons/bouncer.gd
 res://lessons/bouncer.tscn
-res://lessons/runner.gd
+res://lessons/game.tscn

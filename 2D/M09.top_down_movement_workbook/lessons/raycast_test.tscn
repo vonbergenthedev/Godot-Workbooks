@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cypeg7f6ibbbd"]
+
+[ext_resource type="PackedScene" uid="uid://blulixlq80npr" path="res://lessons/simple_obstable.tscn" id="1_yfqnp"]
+[ext_resource type="PackedScene" uid="uid://p75euy1gcr34" path="res://lessons/runner.tscn" id="2_shtk0"]
+[ext_resource type="PackedScene" uid="uid://budpgxkjtmw1f" path="res://lessons/bouncer.tscn" id="3_1bk0p"]
+
+[node name="Game" type="Node2D"]
+
+[node name="SimpleObstable" parent="." instance=ExtResource("1_yfqnp")]
+position = Vector2(350, 365)
+
+[node name="SimpleObstable2" parent="." instance=ExtResource("1_yfqnp")]
+position = Vector2(347, 96)
+
+[node name="SimpleObstable3" parent="." instance=ExtResource("1_yfqnp")]
+position = Vector2(610, 222)
+
+[node name="Runner" parent="." instance=ExtResource("2_shtk0")]
+position = Vector2(859, 333)
+
+[node name="Bouncer" parent="." instance=ExtResource("3_1bk0p")]
+position = Vector2(186, 339)
