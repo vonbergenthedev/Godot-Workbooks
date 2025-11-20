@@ -16,9 +16,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var discrete_sign_direction := direction.sign()
-	
+
 	match discrete_sign_direction:
-		
 		Vector2.DOWN:
 			texture = GODOT_BOTTOM
 
@@ -30,9 +29,9 @@ func _process(_delta: float) -> void:
 
 		VECTOR_UP_RIGHT, VECTOR_UP_LEFT:
 			texture = GODOT_UP_RIGHT
-			
+
 		VECTOR_DOWN_RIGHT, VECTOR_DOWN_LEFT:
 			texture = GODOT_BOTTOM_RIGHT
-			
+
 	if discrete_sign_direction.length() > 0:
 		flip_h = discrete_sign_direction.x < 0.0
