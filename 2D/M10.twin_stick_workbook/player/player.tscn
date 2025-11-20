@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://43ku0c7m8gqa"]
+[gd_scene load_steps=7 format=3 uid="uid://43ku0c7m8gqa"]
 
 [ext_resource type="Script" uid="uid://cec0q6lybwlr1" path="res://player/player.gd" id="1_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://bnuxefkl10pkv" path="res://common/shadow_circle.png" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://bw03btxpkxde4" path="res://player/godot_bottom.png" id="2_g1dw6"]
+[ext_resource type="Script" uid="uid://cdliwtiyyx718" path="res://player/character_sprite.gd" id="4_qjkh3"]
 [ext_resource type="PackedScene" uid="uid://wdey00p3syru" path="res://levels/background/background_blue_sky.tscn" id="4_yw30f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yw30f"]
@@ -20,6 +21,7 @@ texture = ExtResource("1_rkbax")
 [node name="CharacterSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -40)
 texture = ExtResource("2_g1dw6")
+script = ExtResource("4_qjkh3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_yw30f")
