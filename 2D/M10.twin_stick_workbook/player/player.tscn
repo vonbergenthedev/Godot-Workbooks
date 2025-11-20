@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://43ku0c7m8gqa"]
+
+[ext_resource type="Script" uid="uid://cec0q6lybwlr1" path="res://player/player.gd" id="1_g1dw6"]
+[ext_resource type="Texture2D" uid="uid://bnuxefkl10pkv" path="res://common/shadow_circle.png" id="1_rkbax"]
+[ext_resource type="Texture2D" uid="uid://bw03btxpkxde4" path="res://player/godot_bottom.png" id="2_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://wdey00p3syru" path="res://levels/background/background_blue_sky.tscn" id="4_yw30f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yw30f"]
+radius = 20.0
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_g1dw6")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(0, 35)
+texture = ExtResource("1_rkbax")
+
+[node name="CharacterSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+texture = ExtResource("2_g1dw6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yw30f")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="BackgroundBlueSky" parent="." instance=ExtResource("4_yw30f")]
