@@ -7,12 +7,11 @@ var aim_direction: Vector2 = Vector2.ZERO
 func _process(_delta: float) -> void:
 	if _is_joypad:
 		aim_direction = Input.get_vector("aim_left", "aim_right", "aim_up", "aim_down")
-		
-		if aim_direction.length() > 0.0:
-			rotation = aim_direction.angle()
 			
 	else:
 		aim_direction = global_position.direction_to(get_global_mouse_position())
+	
+	if aim_direction.length() > 0.0:
 		rotation = aim_direction.angle()
 		
 	z_index = 3
