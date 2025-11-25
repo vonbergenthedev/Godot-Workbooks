@@ -22,6 +22,7 @@ position = Vector2(0, 35)
 texture = ExtResource("1_rkbax")
 
 [node name="CharacterSprite" type="Sprite2D" parent="."]
+z_index = 2
 position = Vector2(0, -40)
 texture = ExtResource("2_g1dw6")
 script = ExtResource("4_qjkh3")
@@ -36,7 +37,7 @@ shape = SubResource("CircleShape2D_yw30f")
 [node name="BackgroundBlueSky" parent="." instance=ExtResource("4_yw30f")]
 
 [node name="WeaponPivot" type="Node2D" parent="."]
-z_index = -1
+z_index = 1
 position = Vector2(0, -39)
 script = ExtResource("6_rgyib")
 
