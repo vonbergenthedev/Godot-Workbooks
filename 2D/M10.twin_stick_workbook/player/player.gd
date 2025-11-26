@@ -1,6 +1,6 @@
 class_name Player extends CharacterBody2D
 
-@export var max_speed := 2000.0
+@export var max_speed := 1000.0
 @export var acceleration := 6000.0
 @export var deceleration := 5000.0
 
@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-### Alternate using Ground Friction ###
+## Alternate using Ground Friction
 #@export var speed := 460.0
 #@export var ground_friction_factor := 10.0
 

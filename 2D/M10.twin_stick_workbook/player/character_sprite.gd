@@ -10,9 +10,6 @@ const VECTOR_DOWN_RIGHT = Vector2.DOWN + Vector2.RIGHT
 const VECTOR_UP_LEFT = Vector2.UP + Vector2.LEFT
 const VECTOR_DOWN_LEFT = Vector2.DOWN + Vector2.LEFT
 
-func _ready() -> void:
-	texture =  GODOT_BOTTOM
-
 func _process(_delta: float) -> void:
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var discrete_sign_direction := direction.sign()
