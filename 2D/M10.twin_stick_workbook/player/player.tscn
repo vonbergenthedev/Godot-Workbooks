@@ -12,6 +12,7 @@
 radius = 20.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 30
 motion_mode = 1
 script = ExtResource("1_g1dw6")
 
@@ -38,7 +39,6 @@ script = ExtResource("6_rgyib")
 position = Vector2(55, 0)
 
 [node name="Weapon" parent="WeaponPivot/WeaponAnchor" instance=ExtResource("7_hg6s5")]
-random_angle = 0.5235987755982988
 
 [node name="HandLeft" type="Sprite2D" parent="WeaponPivot/WeaponAnchor"]
 position = Vector2(20, -30)

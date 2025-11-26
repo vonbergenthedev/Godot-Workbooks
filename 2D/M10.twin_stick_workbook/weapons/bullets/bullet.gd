@@ -6,6 +6,15 @@ var max_range := 1000.0
 var _traveled_distance = 0.0
 
 
+func _ready() -> void:
+	body_entered.connect(func (body: Node) -> void:
+		if body is Mob:
+			body.set_health(body.health - 1)
+			
+		queue_free()
+	)
+
+
 func _physics_process(delta: float) -> void:
 	var distance := speed * delta
 	var motion := Vector2.RIGHT.rotated(rotation) * distance

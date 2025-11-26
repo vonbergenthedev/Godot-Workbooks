@@ -1,12 +1,13 @@
-extends CharacterBody2D
+class_name  Mob extends CharacterBody2D
 
-
-var _player: Player = null
 
 @export var max_speed := 500.0
 @export var acceleration := 1000.0
 
 @onready var _area: Area2D = $SightLineArea2D
+
+var _player: Player = null
+var health := 3
 
 
 func _ready() -> void:
@@ -33,10 +34,20 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		
 	move_and_slide()
-	
-	
+
+
 func get_global_player_position() -> Vector2:
 	return get_tree().root.get_node("Game/Player").global_position
+
+
+func set_health(new_health: int) -> void:
+	health = new_health
+	if health <= 0:
+		die()
+
+
+func die() -> void:
+	queue_free.call_deferred()
 
 
 	## Testing for Sight Line using mouse.

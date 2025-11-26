@@ -1,10 +1,12 @@
 class_name Player extends CharacterBody2D
 
-@export var max_speed := 1000.0
-@export var acceleration := 6000.0
-@export var deceleration := 5000.0
+
+@export var max_speed := 800.0
+@export var acceleration := 4800.0
+@export var deceleration := 3200.0
 
 var turning_factor := 20.0
+
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")

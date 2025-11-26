@@ -1,5 +1,6 @@
 extends Sprite2D
 
+
 const GODOT_BOTTOM := preload("res://player/godot_bottom.png")
 const GODOT_BOTTOM_RIGHT := preload("res://player/godot_bottom_right.png")
 const GODOT_RIGHT := preload("res://player/godot_right.png")
@@ -9,6 +10,7 @@ const VECTOR_UP_RIGHT = Vector2.UP + Vector2.RIGHT
 const VECTOR_DOWN_RIGHT = Vector2.DOWN + Vector2.RIGHT
 const VECTOR_UP_LEFT = Vector2.UP + Vector2.LEFT
 const VECTOR_DOWN_LEFT = Vector2.DOWN + Vector2.LEFT
+
 
 func _process(_delta: float) -> void:
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
