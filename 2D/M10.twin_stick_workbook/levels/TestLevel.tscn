@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1y3edumwomgp"]
+[gd_scene load_steps=4 format=3 uid="uid://d1y3edumwomgp"]
 
 [ext_resource type="PackedScene" uid="uid://cu2rb5dl4ljte" path="res://levels/rooms/room_a.tscn" id="1_o7f2i"]
 [ext_resource type="PackedScene" uid="uid://43ku0c7m8gqa" path="res://player/player.tscn" id="2_hsexo"]
+[ext_resource type="PackedScene" uid="uid://cs55p4on85fs5" path="res://weapons/bullets/bullet.tscn" id="3_1mo47"]
 
 [node name="TestLevel" type="Node2D"]
 
@@ -10,3 +11,6 @@
 [node name="Player" parent="." instance=ExtResource("2_hsexo")]
 position = Vector2(322, 268)
 max_speed = 450.0
+
+[node name="Bullet" parent="." instance=ExtResource("3_1mo47")]
+position = Vector2(330, 465)
