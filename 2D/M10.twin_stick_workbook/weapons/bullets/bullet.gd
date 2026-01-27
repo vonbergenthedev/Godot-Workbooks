@@ -8,9 +8,11 @@ var max_range := 600.0
 var _current_distance_travelled := 0.0
 
 
+
 func _physics_process(delta: float) -> void:
 	# Move bullet in direction of sprite rotation each frame
-	position += Vector2.RIGHT.rotated(rotation) * speed * delta
+	var direction := global_transform.x.normalized()
+	position += direction * speed * delta
 	# Add to distance travelled by bullet each frame
 	_current_distance_travelled += speed * delta
 	# If bullet has travelled farther than max range remove it from game by

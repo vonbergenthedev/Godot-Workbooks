@@ -1,14 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://43ku0c7m8gqa"]
+[gd_scene load_steps=9 format=3 uid="uid://43ku0c7m8gqa"]
 
 [ext_resource type="Script" uid="uid://bml0yexgmjr54" path="res://player/player.gd" id="1_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://bw03btxpkxde4" path="res://player/godot_bottom.png" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://bnuxefkl10pkv" path="res://common/shadow_circle.png" id="2_yw30f"]
 [ext_resource type="Script" uid="uid://dwq5fodwcva0j" path="res://player/body_sprite_2d.gd" id="4_yw30f"]
+[ext_resource type="Script" uid="uid://djmlb8fcjgvng" path="res://player/weapon_pivot.gd" id="5_boad6"]
+[ext_resource type="PackedScene" uid="uid://cmcxoh45b2757" path="res://weapons/weapon.tscn" id="5_qjkh3"]
+[ext_resource type="Texture2D" uid="uid://dekkcmj408pvt" path="res://player/hand_fire.png" id="7_rgyib"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qjkh3"]
 radius = 19.0
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(0, -37)
 motion_mode = 1
 script = ExtResource("1_g1dw6")
 
@@ -22,7 +26,31 @@ texture = ExtResource("1_oul6g")
 script = ExtResource("4_yw30f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(0, 37)
 shape = SubResource("CircleShape2D_qjkh3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="WeaponPivot" type="Node2D" parent="."]
+position = Vector2(0, 6)
+script = ExtResource("5_boad6")
+
+[node name="WeaponAnchor" type="Marker2D" parent="WeaponPivot"]
+unique_name_in_owner = true
+position = Vector2(70, 0)
+
+[node name="Weapon" parent="WeaponPivot/WeaponAnchor" instance=ExtResource("5_qjkh3")]
+
+[node name="HandLeft" type="Sprite2D" parent="WeaponPivot/WeaponAnchor"]
+position = Vector2(7, -22)
+rotation = -0.17453292
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("7_rgyib")
+
+[node name="HandRight" type="Sprite2D" parent="WeaponPivot/WeaponAnchor"]
+position = Vector2(7, 22.000004)
+rotation = 0.17453292
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("7_rgyib")
+flip_v = true
