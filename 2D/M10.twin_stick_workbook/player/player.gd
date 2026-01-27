@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 ## Maximum movement speed for player.
 @export var max_speed := 600.0
