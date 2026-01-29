@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	# If player node is not found, decelerate to stopping.
 	if _player == null:
 		velocity = velocity.move_toward(Vector2.ZERO, deceleration * delta)
-	# If player node is found, accelerate in straight line to player.
+	# If player node is found, accelerate in straight line toward player.
 	else:
 		var direction = global_position.direction_to(_player.global_position)
 		var distance = global_position.distance_to(_player.global_position)

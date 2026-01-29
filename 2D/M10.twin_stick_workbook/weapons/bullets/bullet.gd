@@ -15,7 +15,8 @@ var damage := 1
 func _ready() -> void:
 	body_entered.connect(func (body:Node) -> void:
 		if body is Mob:
-			body.health = body.health - damage
+			var current_health = body.health
+			body.health = current_health - damage
 			_destroy()
 		)
 	
