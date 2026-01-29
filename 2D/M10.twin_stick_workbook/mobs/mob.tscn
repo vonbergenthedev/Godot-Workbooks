@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0i2gypp2yyrp"]
+[gd_scene format=3 uid="uid://c0i2gypp2yyrp"]
 
 [ext_resource type="Script" uid="uid://cxodc6xq7oi85" path="res://mobs/mob.gd" id="1_fgbma"]
 [ext_resource type="Texture2D" uid="uid://nohjoiah3jgr" path="res://mobs/sword_inactive.png" id="2_p7hwu"]
@@ -10,19 +10,19 @@ radius = 325.03845
 radius = 19.0
 height = 130.0
 
-[node name="Mob" type="CharacterBody2D"]
+[node name="Mob" type="CharacterBody2D" unique_id=17683260]
 motion_mode = 1
 script = ExtResource("1_fgbma")
 
-[node name="PlayerDetectionArea2D" type="Area2D" parent="."]
+[node name="PlayerDetectionArea2D" type="Area2D" parent="." unique_id=2107737472]
 
-[node name="PlayerDetectionCollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea2D"]
+[node name="PlayerDetectionCollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea2D" unique_id=2146429239]
 shape = SubResource("CircleShape2D_4p423")
 debug_color = Color(0, 0.6, 0, 0.41960785)
 
-[node name="MobSprite2D" type="Sprite2D" parent="."]
+[node name="MobSprite2D" type="Sprite2D" parent="." unique_id=990697712]
 texture = ExtResource("2_p7hwu")
 
-[node name="SpriteCollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="SpriteCollisionShape2D" type="CollisionShape2D" parent="." unique_id=1872678226]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_cxx3d")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://43ku0c7m8gqa"]
+[gd_scene format=3 uid="uid://43ku0c7m8gqa"]
 
 [ext_resource type="Script" uid="uid://bml0yexgmjr54" path="res://player/player.gd" id="1_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://bw03btxpkxde4" path="res://player/godot_bottom.png" id="1_oul6g"]
@@ -11,44 +11,44 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_qjkh3"]
 radius = 19.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=970680585]
 position = Vector2(0, -37)
 motion_mode = 1
 script = ExtResource("1_g1dw6")
 
-[node name="ShadowSprite2D" type="Sprite2D" parent="."]
+[node name="ShadowSprite2D" type="Sprite2D" parent="." unique_id=2114537785]
 self_modulate = Color(1, 1, 1, 0.39215687)
 position = Vector2(0, 74)
 texture = ExtResource("2_yw30f")
 
-[node name="BodySprite2D" type="Sprite2D" parent="."]
+[node name="BodySprite2D" type="Sprite2D" parent="." unique_id=99504296]
 texture = ExtResource("1_oul6g")
 script = ExtResource("4_yw30f")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1714428456]
 unique_name_in_owner = true
 position = Vector2(0, 37)
 shape = SubResource("CircleShape2D_qjkh3")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1308246669]
 
-[node name="WeaponPivot" type="Node2D" parent="."]
+[node name="WeaponPivot" type="Node2D" parent="." unique_id=343298839]
 position = Vector2(0, 6)
 script = ExtResource("5_boad6")
 
-[node name="WeaponAnchor" type="Marker2D" parent="WeaponPivot"]
+[node name="WeaponAnchor" type="Marker2D" parent="WeaponPivot" unique_id=2105306351]
 unique_name_in_owner = true
 position = Vector2(70, 0)
 
-[node name="Weapon" parent="WeaponPivot/WeaponAnchor" instance=ExtResource("5_qjkh3")]
+[node name="Weapon" parent="WeaponPivot/WeaponAnchor" unique_id=214901843 instance=ExtResource("5_qjkh3")]
 
-[node name="HandLeft" type="Sprite2D" parent="WeaponPivot/WeaponAnchor"]
+[node name="HandLeft" type="Sprite2D" parent="WeaponPivot/WeaponAnchor" unique_id=508133496]
 position = Vector2(7, -22)
 rotation = -0.17453292
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("7_rgyib")
 
-[node name="HandRight" type="Sprite2D" parent="WeaponPivot/WeaponAnchor"]
+[node name="HandRight" type="Sprite2D" parent="WeaponPivot/WeaponAnchor" unique_id=481298554]
 position = Vector2(7, 22.000004)
 rotation = 0.17453292
 scale = Vector2(0.75, 0.75)

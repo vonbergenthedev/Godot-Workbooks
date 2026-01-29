@@ -3,12 +3,22 @@ class_name Bullet extends Area2D
 ## Current speed of bullet
 @export var speed := 600.0
 ## Maximum distance bullet travels before being destroyed
-var max_range := 600.0
+@export var max_range := 600.0
+
 ## Curent distance bullet has travelled
 var _current_distance_travelled := 0.0
 
+## Default damage done by bullet
+var damage := 1
 
 
+func _ready() -> void:
+	body_entered.connect(func (body:Node) -> void:
+		if body is Mob:
+			body.health = body.health - damage
+			_destroy()
+		)
+	
 func _physics_process(delta: float) -> void:
 	# Move bullet in direction of sprite rotation each frame
 	var direction := global_transform.x.normalized()

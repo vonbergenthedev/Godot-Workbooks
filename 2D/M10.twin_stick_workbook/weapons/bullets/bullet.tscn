@@ -1,19 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs55p4on85fs5"]
+[gd_scene format=3 uid="uid://cs55p4on85fs5"]
 
 [ext_resource type="Script" uid="uid://byqqd01yqc27l" path="res://weapons/bullets/bullet.gd" id="1_0dwqp"]
 [ext_resource type="Texture2D" uid="uid://dxe2pniv6kdn4" path="res://weapons/bullets/fire_trail.png" id="2_7gn5l"]
 [ext_resource type="Texture2D" uid="uid://bgn8fvhkjniwn" path="res://weapons/bullets/fire.png" id="3_ftu3o"]
 
-[node name="Bullet" type="Area2D"]
+[node name="Bullet" type="Area2D" unique_id=214909391]
+collision_layer = 0
 script = ExtResource("1_0dwqp")
 
-[node name="BulletFireTrailSprite2D" type="Sprite2D" parent="."]
+[node name="BulletFireTrailSprite2D" type="Sprite2D" parent="." unique_id=185088763]
 position = Vector2(-34, 0)
 texture = ExtResource("2_7gn5l")
 
-[node name="BulletBodySprite2D" type="Sprite2D" parent="."]
+[node name="BulletBodySprite2D" type="Sprite2D" parent="." unique_id=2016275870]
 texture = ExtResource("3_ftu3o")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1287312315]
 visible = false
 polygon = PackedVector2Array(22, 0, 6, -8, -6, -8, -22, 0, -6, 8, 6, 8)

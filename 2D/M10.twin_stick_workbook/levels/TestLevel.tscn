@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1y3edumwomgp"]
+[gd_scene format=3 uid="uid://d1y3edumwomgp"]
 
 [ext_resource type="PackedScene" uid="uid://cu2rb5dl4ljte" path="res://levels/rooms/room_a.tscn" id="1_o7f2i"]
 [ext_resource type="PackedScene" uid="uid://43ku0c7m8gqa" path="res://player/player.tscn" id="2_hsexo"]
 [ext_resource type="PackedScene" uid="uid://c0i2gypp2yyrp" path="res://mobs/mob.tscn" id="3_1mo47"]
 
-[node name="TestLevel" type="Node2D"]
+[node name="TestLevel" type="Node2D" unique_id=1452400764]
 
-[node name="RoomA" parent="." instance=ExtResource("1_o7f2i")]
+[node name="RoomA" parent="." unique_id=967314450 instance=ExtResource("1_o7f2i")]
 
-[node name="Player" parent="." instance=ExtResource("2_hsexo")]
+[node name="Player" parent="." unique_id=1974971270 instance=ExtResource("2_hsexo")]
 position = Vector2(322, 268)
 max_speed = 450.0
 
-[node name="Mob" parent="." instance=ExtResource("3_1mo47")]
+[node name="Mob" parent="." unique_id=539654757 instance=ExtResource("3_1mo47")]
 position = Vector2(1079, 510)

@@ -1,6 +1,6 @@
 class_name Mob extends CharacterBody2D
 
-@onready var _area: Area2D = $PlayerDetectionArea2D
+@onready var _player_detection_area: Area2D = $PlayerDetectionArea2D
 
 ## Maximum movement speed for mob.
 @export var max_speed := 250.0
@@ -8,17 +8,22 @@ class_name Mob extends CharacterBody2D
 @export var acceleration := 1000.0
 ## Rate of deceleration for mob movement.
 @export var deceleration := 800.0
+## Mob default health and setter declaration
+@export var health := 0: set = set_health
 
+var _max_health := 3
 var _player: Player = null
 
 
 func _ready() -> void:
-	_area.body_entered.connect(func (body:Node) -> void:
+	health = _max_health
+	
+	_player_detection_area.body_entered.connect(func (body:Node) -> void:
 		if body is Player:
 			_player = body
 	)
 	
-	_area.body_exited.connect(func (body:Node) -> void:
+	_player_detection_area.body_exited.connect(func (body:Node) -> void:
 		if body is Player:
 			_player = null
 	)
@@ -36,3 +41,14 @@ func _physics_process(delta: float) -> void:
 		velocity = velocity.move_toward(desired_velocity, acceleration * delta)
 	
 	move_and_slide()
+
+## Setter function for health; removes mob node at 0 health
+func set_health(new_health: int) -> void:
+	health = clampi(new_health, 0, _max_health)
+	
+	if health == 0:
+		die()
+
+## Function to remove mob from scene
+func die() -> void:
+	queue_free()
