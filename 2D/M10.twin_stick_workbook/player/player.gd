@@ -3,7 +3,7 @@ class_name Player extends CharacterBody2D
 ## Maximum movement speed for player.
 @export var max_speed := 600.0
 ## Rate of acceleration for player movement.
-@export var acceleration := 3000.0
+@export var acceleration := 2500.0
 ## Rate of deceleration for player movement.
 @export var deceleration := 3000.0
 
