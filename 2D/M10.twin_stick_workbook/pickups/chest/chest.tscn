@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://cnimbin4l3i2f"]
+
+[ext_resource type="Script" uid="uid://burcw6tqm55it" path="res://pickups/chest/chest.gd" id="1_6c0c5"]
+[ext_resource type="Texture2D" uid="uid://dub7cda3qxho2" path="res://pickups/chest/chest_bottom.png" id="2_lnm3d"]
+[ext_resource type="Texture2D" uid="uid://bfj2ayjhou4bv" path="res://pickups/chest/chest_top.png" id="3_44fms"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7m3xh"]
+radius = 76.0
+
+[sub_resource type="Animation" id="Animation_6c0c5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChestLidTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ChestLidTop:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_lnm3d"]
+resource_name = "open"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChestLidTop:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(20, 0), Vector2(40, 0), Vector2(60, 0), Vector2(80, 20)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ChestLidTop:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.2617994, 0.6981317007977318]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_44fms"]
+_data = {
+&"RESET": SubResource("Animation_6c0c5"),
+&"open": SubResource("Animation_lnm3d")
+}
+
+[node name="Chest" type="Area2D" unique_id=147497769]
+script = ExtResource("1_6c0c5")
+
+[node name="PlayerDetectionArea" type="CollisionShape2D" parent="." unique_id=1958029108]
+shape = SubResource("CircleShape2D_7m3xh")
+
+[node name="ChestLidBottom" type="Sprite2D" parent="." unique_id=1298030974]
+texture = ExtResource("2_lnm3d")
+
+[node name="ChestLidTop" type="Sprite2D" parent="." unique_id=825437133]
+texture = ExtResource("3_44fms")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1291148311]
+libraries/ = SubResource("AnimationLibrary_44fms")

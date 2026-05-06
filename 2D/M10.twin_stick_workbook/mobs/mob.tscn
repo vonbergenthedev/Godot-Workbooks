@@ -1,28 +1,57 @@
 [gd_scene format=3 uid="uid://c0i2gypp2yyrp"]
 
-[ext_resource type="Script" uid="uid://cxodc6xq7oi85" path="res://mobs/mob.gd" id="1_fgbma"]
-[ext_resource type="Texture2D" uid="uid://nohjoiah3jgr" path="res://mobs/sword_inactive.png" id="2_p7hwu"]
+[ext_resource type="Texture2D" uid="uid://nohjoiah3jgr" path="res://mobs/sword_inactive.png" id="1_bteyy"]
+[ext_resource type="Script" uid="uid://d1n20pec78ww8" path="res://mobs/mob.gd" id="1_p7hwu"]
+[ext_resource type="Theme" uid="uid://b04qhwbgn6r2s" path="res://mobs/mob_healthbar.tres" id="3_p7hwu"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4p423"]
-radius = 325.03845
+[sub_resource type="CircleShape2D" id="CircleShape2D_fgbma"]
+radius = 315.0016
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cxx3d"]
-radius = 19.0
-height = 130.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fgbma"]
+radius = 18.0
+height = 128.0
 
-[node name="Mob" type="CharacterBody2D" unique_id=17683260]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p7hwu"]
+radius = 16.0
+height = 122.0
+
+[node name="Mob" type="CharacterBody2D" unique_id=1902314049]
+collision_layer = 4
+collision_mask = 75
 motion_mode = 1
-script = ExtResource("1_fgbma")
+script = ExtResource("1_p7hwu")
 
-[node name="PlayerDetectionArea2D" type="Area2D" parent="." unique_id=2107737472]
+[node name="PlayerDetectionArea2D" type="Area2D" parent="." unique_id=499634609]
 
-[node name="PlayerDetectionCollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea2D" unique_id=2146429239]
-shape = SubResource("CircleShape2D_4p423")
-debug_color = Color(0, 0.6, 0, 0.41960785)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea2D" unique_id=598881065]
+shape = SubResource("CircleShape2D_fgbma")
+debug_color = Color(0.13665724, 0.63731897, 0.32023084, 0.41960785)
 
-[node name="MobSprite2D" type="Sprite2D" parent="." unique_id=990697712]
-texture = ExtResource("2_p7hwu")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2065174176]
+texture = ExtResource("1_bteyy")
 
-[node name="SpriteCollisionShape2D" type="CollisionShape2D" parent="." unique_id=1872678226]
+[node name="Hitbox" type="Area2D" parent="." unique_id=2122661869]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=296544539]
 rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_cxx3d")
+shape = SubResource("CapsuleShape2D_fgbma")
+debug_color = Color(0.99726564, 0, 0.1793904, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1717802974]
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_p7hwu")
+
+[node name="DamageTimer" type="Timer" parent="." unique_id=1492861444]
+wait_time = 0.3
+one_shot = true
+
+[node name="MobHealthbar" type="ProgressBar" parent="." unique_id=186382335]
+offset_left = -63.0
+offset_top = -59.0
+offset_right = 63.0
+offset_bottom = -42.0
+theme = ExtResource("3_p7hwu")
+max_value = 3.0
+step = 1.0
+value = 3.0
+show_percentage = false

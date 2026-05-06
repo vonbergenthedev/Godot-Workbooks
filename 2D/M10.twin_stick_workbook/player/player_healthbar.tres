@@ -1,0 +1,27 @@
+[gd_resource type="Theme" format=3 uid="uid://brcnqki6hulye"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2dp5p"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.47058824)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_msxh6"]
+load_path = "res://.godot/imported/health_point.png-abaefa32fbb7908294b495c28300dc26.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_40ij2"]
+texture = SubResource("CompressedTexture2D_msxh6")
+
+[resource]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_2dp5p")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_40ij2")

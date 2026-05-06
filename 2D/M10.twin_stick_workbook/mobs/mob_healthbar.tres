@@ -1,0 +1,24 @@
+[gd_resource type="Theme" format=3 uid="uid://b04qhwbgn6r2s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2dp5p"]
+bg_color = Color(0.11764706, 0.11764706, 0.11764706, 0.47058824)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_80dra"]
+bg_color = Color(0.8457414, 0.124680884, 0.1396187, 1)
+
+[resource]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_2dp5p")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_80dra")

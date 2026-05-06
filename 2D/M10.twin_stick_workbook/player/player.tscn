@@ -1,56 +1,79 @@
 [gd_scene format=3 uid="uid://43ku0c7m8gqa"]
 
-[ext_resource type="Script" uid="uid://bml0yexgmjr54" path="res://player/player.gd" id="1_g1dw6"]
+[ext_resource type="Script" uid="uid://cec0q6lybwlr1" path="res://player/player.gd" id="1_g1dw6"]
 [ext_resource type="Texture2D" uid="uid://bw03btxpkxde4" path="res://player/godot_bottom.png" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://bnuxefkl10pkv" path="res://common/shadow_circle.png" id="2_yw30f"]
-[ext_resource type="Script" uid="uid://dwq5fodwcva0j" path="res://player/body_sprite_2d.gd" id="4_yw30f"]
-[ext_resource type="Script" uid="uid://djmlb8fcjgvng" path="res://player/weapon_pivot.gd" id="5_boad6"]
-[ext_resource type="PackedScene" uid="uid://cmcxoh45b2757" path="res://weapons/weapon.tscn" id="5_qjkh3"]
-[ext_resource type="Texture2D" uid="uid://dekkcmj408pvt" path="res://player/hand_fire.png" id="7_rgyib"]
+[ext_resource type="Script" uid="uid://ot8i55vx7igu" path="res://player/player_body_sprite_2d.gd" id="4_yw30f"]
+[ext_resource type="Script" uid="uid://cd4873bcfranp" path="res://player/weapon_pivot.gd" id="5_boad6"]
+[ext_resource type="Script" uid="uid://mau11dj426mi" path="res://player/weapon.gd" id="6_rgyib"]
+[ext_resource type="Texture2D" uid="uid://dekkcmj408pvt" path="res://player/hand_fire.png" id="7_hg6s5"]
+[ext_resource type="PackedScene" uid="uid://cs55p4on85fs5" path="res://weapons/bullets/fireball.tscn" id="7_rgyib"]
+[ext_resource type="Theme" uid="uid://brcnqki6hulye" path="res://player/player_healthbar.tres" id="9_hg6s5"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qjkh3"]
-radius = 19.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_8t03j"]
+radius = 21.0
 
-[node name="Player" type="CharacterBody2D" unique_id=970680585]
-position = Vector2(0, -37)
+[node name="Player" type="CharacterBody2D" unique_id=451111052]
+collision_mask = 86
 motion_mode = 1
 script = ExtResource("1_g1dw6")
 
-[node name="ShadowSprite2D" type="Sprite2D" parent="." unique_id=2114537785]
-self_modulate = Color(1, 1, 1, 0.39215687)
-position = Vector2(0, 74)
+[node name="PlayerShadowSprite2D" type="Sprite2D" parent="." unique_id=1741166879]
+self_modulate = Color(1, 1, 1, 0.3137255)
+show_behind_parent = true
+z_index = -1
+position = Vector2(0, 18)
 texture = ExtResource("2_yw30f")
 
-[node name="BodySprite2D" type="Sprite2D" parent="." unique_id=99504296]
+[node name="PlayerBodySprite2D" type="Sprite2D" parent="." unique_id=844277031]
+position = Vector2(0, -40)
 texture = ExtResource("1_oul6g")
 script = ExtResource("4_yw30f")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1714428456]
+[node name="PlayerCollisionShape2D" type="CollisionShape2D" parent="." unique_id=732233622]
 unique_name_in_owner = true
-position = Vector2(0, 37)
-shape = SubResource("CircleShape2D_qjkh3")
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_8t03j")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1308246669]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=218267839]
 
-[node name="WeaponPivot" type="Node2D" parent="." unique_id=343298839]
-position = Vector2(0, 6)
+[node name="WeaponPivot" type="Node2D" parent="." unique_id=454643087]
+show_behind_parent = true
+position = Vector2(0, -35)
+rotation = -1.4376239
 script = ExtResource("5_boad6")
 
-[node name="WeaponAnchor" type="Marker2D" parent="WeaponPivot" unique_id=2105306351]
+[node name="WeaponAnchor" type="Marker2D" parent="WeaponPivot" unique_id=20912800]
 unique_name_in_owner = true
-position = Vector2(70, 0)
+position = Vector2(0, -5)
 
-[node name="Weapon" parent="WeaponPivot/WeaponAnchor" unique_id=214901843 instance=ExtResource("5_qjkh3")]
+[node name="Weapon" type="Node2D" parent="WeaponPivot/WeaponAnchor" unique_id=993234160]
+y_sort_enabled = true
+position = Vector2(72, 5)
+script = ExtResource("6_rgyib")
+bullet_scene = ExtResource("7_rgyib")
+shot_angle = 0.08726646259971647
 
-[node name="HandLeft" type="Sprite2D" parent="WeaponPivot/WeaponAnchor" unique_id=508133496]
-position = Vector2(7, -22)
-rotation = -0.17453292
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("7_rgyib")
+[node name="HandLeft" type="Sprite2D" parent="WeaponPivot/WeaponAnchor/Weapon" unique_id=1305847291]
+position = Vector2(4, -23.999985)
+rotation = -0.2617994
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_hg6s5")
 
-[node name="HandRight" type="Sprite2D" parent="WeaponPivot/WeaponAnchor" unique_id=481298554]
-position = Vector2(7, 22.000004)
-rotation = 0.17453292
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("7_rgyib")
+[node name="HandRight" type="Sprite2D" parent="WeaponPivot/WeaponAnchor/Weapon" unique_id=1539590551]
+position = Vector2(4, 24)
+rotation = 0.2617994
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_hg6s5")
 flip_v = true
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1599118535]
+offset_left = -67.0
+offset_top = -182.0
+offset_right = 67.0
+offset_bottom = -155.0
+theme = ExtResource("9_hg6s5")
+max_value = 10.0
+step = 1.0
+value = 10.0
+show_percentage = false
