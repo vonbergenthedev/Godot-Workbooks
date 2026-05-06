@@ -1,3 +1,4 @@
+@tool
 class_name Mob extends CharacterBody2D
 
 var _player: Player = null
@@ -18,6 +19,8 @@ var deceleration := max_speed * 10
 
 
 func _ready() -> void:
+	
+	_mob_healthbar.max_value = max_health
 	_mob_healthbar.value = health
 	_mob_healthbar.visible = false
 	

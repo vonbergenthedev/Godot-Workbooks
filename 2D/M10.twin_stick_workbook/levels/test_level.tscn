@@ -19,11 +19,33 @@
 [ext_resource type="PackedScene" uid="uid://diw0kp1e3livt" path="res://levels/rooms/room_d.tscn" id="12_wjuib"]
 [ext_resource type="Texture2D" uid="uid://c7x0dwetkulkh" path="res://levels/props/grass_rock_2.png" id="12_x7oem"]
 [ext_resource type="PackedScene" uid="uid://dlxjrgals3rg2" path="res://levels/invisible_walls.tscn" id="13_o5yuq"]
+[ext_resource type="Texture2D" uid="uid://c1cch51fhbxi8" path="res://levels/props/rocks_sword.png" id="13_x7oem"]
+[ext_resource type="Texture2D" uid="uid://6e1ykwlqveol" path="res://levels/props/gems_mixed_1.png" id="14_04rbu"]
 [ext_resource type="PackedScene" uid="uid://c3fl3stluv0gn" path="res://levels/bridges.tscn" id="14_xag4j"]
+[ext_resource type="Texture2D" uid="uid://ceaq0nbm15ktp" path="res://levels/props/table_large_left.png" id="15_ndqk6"]
 [ext_resource type="PackedScene" uid="uid://wdey00p3syru" path="res://levels/background/background_blue_sky.tscn" id="15_pgbyh"]
 [ext_resource type="Texture2D" uid="uid://djume7gf717c8" path="res://levels/props/pot_clay_gems.png" id="15_ra35m"]
+[ext_resource type="Texture2D" uid="uid://bsw2xiqemlhfp" path="res://levels/props/table_small_pots.png" id="16_c5dyf"]
+[ext_resource type="Texture2D" uid="uid://db5rmlgvp6f7u" path="res://levels/props/gems_mixed_2.png" id="17_7doj7"]
 [ext_resource type="Script" uid="uid://d4ipjq0ugo7nc" path="res://levels/level_bridges.gd" id="18_atrxo"]
 [ext_resource type="Texture2D" uid="uid://clb66gwfamij8" path="res://levels/props/table_medium.png" id="23_x7oem"]
+[ext_resource type="Texture2D" uid="uid://b0tnm0wqi3kv4" path="res://levels/props/table_small_blue.png" id="27_q4mjk"]
+[ext_resource type="Texture2D" uid="uid://b4cp3jnos5v2u" path="res://levels/props/table_small_green.png" id="28_ap10w"]
+[ext_resource type="Texture2D" uid="uid://c2d0wk56h4jty" path="res://levels/props/rocks_shield.png" id="29_1ein0"]
+[ext_resource type="Texture2D" uid="uid://d0mxuluy2ht3h" path="res://levels/props/table_small_mixed.png" id="29_jhad0"]
+[ext_resource type="Texture2D" uid="uid://23hbaaoofbeh" path="res://levels/props/pot_stone_stacked.png" id="30_0qigd"]
+[ext_resource type="Texture2D" uid="uid://3jj533p5fg4s" path="res://levels/props/table_small_red.png" id="30_pd36w"]
+[ext_resource type="Texture2D" uid="uid://c0he43xgt0jjr" path="res://levels/props/table_small_silver.png" id="31_61jrn"]
+[ext_resource type="Texture2D" uid="uid://cho5ax3yp803g" path="res://levels/props/gems_green_3.png" id="32_c5dyf"]
+[ext_resource type="Texture2D" uid="uid://dlmvn7hlfewup" path="res://levels/props/table_small_yellow.png" id="32_kbtcf"]
+[ext_resource type="Texture2D" uid="uid://djhxx0j4tno2t" path="res://levels/props/gems_green_4.png" id="33_7doj7"]
+[ext_resource type="Texture2D" uid="uid://b1mhee1wq4skl" path="res://levels/props/gems_silver_1.png" id="33_q4mjk"]
+[ext_resource type="Texture2D" uid="uid://dmctowcr0y4a2" path="res://levels/props/grass_rock_3.png" id="34_vg8fp"]
+[ext_resource type="Texture2D" uid="uid://dqsx4s3vbcjiv" path="res://levels/props/statue_gems.png" id="35_uu81q"]
+[ext_resource type="Texture2D" uid="uid://c7h14woyhhois" path="res://levels/props/statue_sword.png" id="36_6wuxv"]
+[ext_resource type="Texture2D" uid="uid://bf08g3uoob67d" path="res://levels/props/table_large_pots.png" id="37_kaa6k"]
+[ext_resource type="Texture2D" uid="uid://bw7o1r5k7d6cn" path="res://levels/props/table_medium_green.png" id="38_h8ll6"]
+[ext_resource type="Texture2D" uid="uid://cffu5ea6g2miv" path="res://levels/props/rocks_gems.png" id="39_4b7wo"]
 
 [sub_resource type="Resource" id="Resource_0vv12"]
 script = ExtResource("5_o6mel")
@@ -59,16 +81,20 @@ position = Vector2(-765, -1095)
 position = Vector2(320, 942)
 possible_chest_items = Array[ExtResource("9_wkb0e")]([SubResource("Resource_0vv12"), SubResource("Resource_4n8tn")])
 
+[node name="Mob" parent="Level/StartingRoom" unique_id=1902314049 instance=ExtResource("3_gmgay")]
+position = Vector2(1016, 518)
+health = 3
+
 [node name="GemsYellow1" type="Sprite2D" parent="Level/StartingRoom" unique_id=1495687150]
 position = Vector2(163, 734)
 texture = ExtResource("8_n4g7x")
 
 [node name="GemsYellow2" type="Sprite2D" parent="Level/StartingRoom" unique_id=923982683]
-position = Vector2(181, 790)
+position = Vector2(202, 870)
 texture = ExtResource("9_atrxo")
 
 [node name="GemsYellow5" type="Sprite2D" parent="Level/StartingRoom" unique_id=549616765]
-position = Vector2(142, 778)
+position = Vector2(237, 784)
 texture = ExtResource("10_vr6yy")
 
 [node name="GrassRock1" type="Sprite2D" parent="Level/StartingRoom" unique_id=299985639]
@@ -79,25 +105,182 @@ texture = ExtResource("11_ra35m")
 position = Vector2(977, 1168)
 texture = ExtResource("12_x7oem")
 
+[node name="RocksSword" type="Sprite2D" parent="Level/StartingRoom" unique_id=239056638]
+position = Vector2(361, 1150)
+texture = ExtResource("13_x7oem")
+
+[node name="GrassRock3" type="Sprite2D" parent="Level/StartingRoom" unique_id=1843575912]
+position = Vector2(632, 494)
+texture = ExtResource("11_ra35m")
+
+[node name="GemsMixed1" type="Sprite2D" parent="Level/StartingRoom" unique_id=1254614036]
+position = Vector2(128, 803)
+texture = ExtResource("14_04rbu")
+
+[node name="TableLargeLeft" type="Sprite2D" parent="Level/StartingRoom" unique_id=85637558]
+position = Vector2(1085, 988)
+texture = ExtResource("15_ndqk6")
+
+[node name="TableSmallPots" type="Sprite2D" parent="Level/StartingRoom" unique_id=1652287785]
+position = Vector2(985, 975)
+texture = ExtResource("16_c5dyf")
+
+[node name="GemsMixed2" type="Sprite2D" parent="Level/StartingRoom" unique_id=191955467]
+position = Vector2(1049, 1016)
+texture = ExtResource("17_7doj7")
+
+[node name="RocksShield" type="Sprite2D" parent="Level/StartingRoom" unique_id=927038425]
+position = Vector2(596, 304)
+texture = ExtResource("29_1ein0")
+
+[node name="RocksSword2" type="Sprite2D" parent="Level/StartingRoom" unique_id=1569886692]
+position = Vector2(236, 200)
+texture = ExtResource("13_x7oem")
+
+[node name="PotStoneStacked" type="Sprite2D" parent="Level/StartingRoom" unique_id=1144146365]
+position = Vector2(197, 377)
+texture = ExtResource("30_0qigd")
+
+[node name="GemsGreen3" type="Sprite2D" parent="Level/StartingRoom" unique_id=137046750]
+position = Vector2(73.00006, 701)
+rotation = 0.33684856
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("32_c5dyf")
+
+[node name="GemsGreen4" type="Sprite2D" parent="Level/StartingRoom" unique_id=1285398554]
+position = Vector2(32, 791)
+texture = ExtResource("33_7doj7")
+
+[node name="GrassRock4" type="Sprite2D" parent="Level/StartingRoom" unique_id=1994368151]
+position = Vector2(580, 1119)
+rotation = 0.25307274
+texture = ExtResource("12_x7oem")
+
+[node name="GrassRock5" type="Sprite2D" parent="Level/StartingRoom" unique_id=1906489910]
+position = Vector2(1023, 253)
+rotation = -0.4223697
+texture = ExtResource("11_ra35m")
+
+[node name="GemsSilver1" type="Sprite2D" parent="Level/StartingRoom" unique_id=2031551692]
+position = Vector2(98, 894)
+texture = ExtResource("33_q4mjk")
+
 [node name="PowerupRoom" parent="Level" unique_id=1003662804 instance=ExtResource("12_wjuib")]
 position = Vector2(643, 441)
 
 [node name="Pickup" parent="Level/PowerupRoom" unique_id=603713436 instance=ExtResource("4_w7r7j")]
-position = Vector2(764, 531)
+position = Vector2(961, 192)
+item = SubResource("Resource_e7anx")
+
+[node name="Pickup2" parent="Level/PowerupRoom" unique_id=1880599485 instance=ExtResource("4_w7r7j")]
+position = Vector2(766, 525)
+item = SubResource("Resource_e7anx")
+
+[node name="Pickup3" parent="Level/PowerupRoom" unique_id=1915523667 instance=ExtResource("4_w7r7j")]
+position = Vector2(807, 1233)
 item = SubResource("Resource_e7anx")
 
 [node name="PotClayGems" type="Sprite2D" parent="Level/PowerupRoom" unique_id=1817561990]
 position = Vector2(159, 513)
 texture = ExtResource("15_ra35m")
 
+[node name="TableMedium" type="Sprite2D" parent="Level/PowerupRoom" unique_id=1798133473]
+position = Vector2(964, 91)
+texture = ExtResource("23_x7oem")
+
+[node name="GrassRock1" type="Sprite2D" parent="Level/PowerupRoom" unique_id=2069496892]
+position = Vector2(535, 404)
+texture = ExtResource("11_ra35m")
+
+[node name="GrassRock2" type="Sprite2D" parent="Level/PowerupRoom" unique_id=282831147]
+position = Vector2(1010, 639)
+texture = ExtResource("12_x7oem")
+
+[node name="GrassRock3" type="Sprite2D" parent="Level/PowerupRoom" unique_id=371540649]
+position = Vector2(577, 795)
+texture = ExtResource("11_ra35m")
+
+[node name="GrassRock4" type="Sprite2D" parent="Level/PowerupRoom" unique_id=297011167]
+position = Vector2(903, 366)
+texture = ExtResource("12_x7oem")
+
+[node name="GrassRock5" type="Sprite2D" parent="Level/PowerupRoom" unique_id=221342936]
+position = Vector2(501, 628)
+texture = ExtResource("12_x7oem")
+
+[node name="TableSmallBlue" type="Sprite2D" parent="Level/PowerupRoom" unique_id=1386518786]
+position = Vector2(140, 1227)
+texture = ExtResource("27_q4mjk")
+
+[node name="TableSmallGreen" type="Sprite2D" parent="Level/PowerupRoom" unique_id=240821497]
+position = Vector2(245, 1227)
+texture = ExtResource("28_ap10w")
+
+[node name="TableSmallMixed" type="Sprite2D" parent="Level/PowerupRoom" unique_id=1161221583]
+position = Vector2(353, 1227)
+texture = ExtResource("29_jhad0")
+
+[node name="TableSmallRed" type="Sprite2D" parent="Level/PowerupRoom" unique_id=234525936]
+position = Vector2(470, 1227)
+texture = ExtResource("30_pd36w")
+
+[node name="TableSmallSilver" type="Sprite2D" parent="Level/PowerupRoom" unique_id=331775196]
+position = Vector2(584, 1227)
+texture = ExtResource("31_61jrn")
+
+[node name="TableSmallYellow" type="Sprite2D" parent="Level/PowerupRoom" unique_id=216853261]
+position = Vector2(698, 1227)
+texture = ExtResource("32_kbtcf")
+
+[node name="GrassRock6" type="Sprite2D" parent="Level/PowerupRoom" unique_id=1504602141]
+position = Vector2(819, 670)
+texture = ExtResource("34_vg8fp")
+
+[node name="StatueGems" type="Sprite2D" parent="Level/PowerupRoom" unique_id=257102863]
+position = Vector2(1212, 527)
+texture = ExtResource("35_uu81q")
+
+[node name="StatueSword" type="Sprite2D" parent="Level/PowerupRoom" unique_id=863321880]
+position = Vector2(191, 770)
+texture = ExtResource("36_6wuxv")
+
+[node name="TableLargePots" type="Sprite2D" parent="Level/PowerupRoom" unique_id=23626073]
+position = Vector2(316, 477)
+texture = ExtResource("37_kaa6k")
+
+[node name="TableMediumGreen" type="Sprite2D" parent="Level/PowerupRoom" unique_id=85836137]
+position = Vector2(956, 980)
+texture = ExtResource("38_h8ll6")
+
+[node name="RocksGems" type="Sprite2D" parent="Level/PowerupRoom" unique_id=1199273782]
+position = Vector2(894, 1392)
+texture = ExtResource("39_4b7wo")
+
 [node name="MidFight" parent="Level" unique_id=741471003 instance=ExtResource("9_0vv12")]
 position = Vector2(2170, -1095)
 
-[node name="Mob" parent="Level/MidFight" unique_id=1902314049 instance=ExtResource("3_gmgay")]
-position = Vector2(580, 698)
+[node name="Mob2" parent="Level/MidFight" unique_id=12187259 instance=ExtResource("3_gmgay")]
+position = Vector2(580, 690)
+health = 3
+
+[node name="Mob3" parent="Level/MidFight" unique_id=1210222820 instance=ExtResource("3_gmgay")]
+position = Vector2(920, 166)
+health = 3
 
 [node name="FinalRoom" parent="Level" unique_id=1584180166 instance=ExtResource("11_o5yuq")]
 position = Vector2(1914, -3589)
+
+[node name="Mob4" parent="Level/FinalRoom" unique_id=26330257 instance=ExtResource("3_gmgay")]
+position = Vector2(1114, 1070)
+health = 3
+
+[node name="Mob5" parent="Level/FinalRoom" unique_id=1837958519 instance=ExtResource("3_gmgay")]
+position = Vector2(555, 774)
+health = 3
+
+[node name="Mob6" parent="Level/FinalRoom" unique_id=2027624032 instance=ExtResource("3_gmgay")]
+position = Vector2(705, 157)
+health = 3
 
 [node name="LevelBridges" type="Node2D" parent="Level" unique_id=2051234068]
 script = ExtResource("18_atrxo")
@@ -108,12 +291,9 @@ position = Vector2(1022, -199)
 tile_map_data = PackedByteArray("AAADAAQAAAABAAEAAGADAAMAAAABAAEAAGADAAIAAAABAAEAAGADAAEAAAACAAEAAGADAAAAAAACAAEAAGADAP//AAACAAEAAGADAP7/AAACAAEAAGD9//3/AAAAAAEAAAD+//3/AAABAAEAAAD///3/AAACAAEAAAAAAP3/AAAAAAEAAAABAP3/AAABAAEAAAACAP3/AAACAAEAAAADAP3/AAACAAEAAAAEAP3/AAABAAEAAAAFAP3/AAACAAEAAAAGAP3/AAAAAAEAAAAHAP3/AAABAAEAAAAIAP3/AAACAAEAAAAQAPj/AAACAAEAAGAQAPf/AAACAAEAAGAQAPb/AAACAAEAAGAQAPX/AAACAAEAAGAQAPT/AAACAAEAAGAQAPP/AAACAAEAAGAQAPL/AAACAAEAAGAQAPH/AAACAAEAAGAQAPD/AAACAAEAAGAQAO//AAACAAEAAGA=")
 
 [node name="InvisibleWalls" parent="Level/LevelBridges" unique_id=439374130 instance=ExtResource("13_o5yuq")]
-tile_map_data = PackedByteArray("AAAGAPz/AAABAAAAAAAHAPz/AAABAAAAAAAIAPz/AAABAAAAAAAJAPz/AAABAAAAAAAKAPz/AAABAAAAAAAKAP3/AAAAAAAAAAAKAP7/AAAAAAAAAAAKAP//AAAAAAAAAAAKAAAAAAAAAAAAAAAKAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAAMAAAAAAAAAAAAAAAMAP//AAAAAAAAAAAMAP7/AAAAAAAAAAAMAAIAAAABAAAAADAKAAIAAAABAAAAADAMAPz/AAABAAAAAAANAPz/AAABAAAAAAAOAPz/AAABAAAAAAAPAPz/AAABAAAAAAAMAP3/AAAAAAAAAAAGAPv/AAABAAAAADAHAPv/AAABAAAAADAIAPv/AAABAAAAADAJAPv/AAABAAAAADAKAPv/AAABAAAAADALAPv/AAABAAAAADAMAPv/AAABAAAAADANAPv/AAABAAAAADAOAPv/AAABAAAAADAPAPv/AAABAAAAADAZAPb/AAABAAAAADAXAPb/AAABAAAAADAXAPX/AAAAAAAAAAAXAPT/AAAAAAAAAAAXAPP/AAAAAAAAAAAXAPL/AAAAAAAAAAAXAPH/AAAAAAAAAAAXAPD/AAAAAAAAAAAZAPX/AAAAAAAAAAAZAPT/AAAAAAAAAAAZAPP/AAAAAAAAAAAZAPL/AAAAAAAAAAAZAPH/AAAAAAAAAAAZAPD/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAGAPz/AAABAAAAAAAHAPz/AAABAAAAAAAIAPz/AAABAAAAAAAJAPz/AAABAAAAAAAKAPz/AAABAAAAAAAKAP3/AAAAAAAAAAAKAP7/AAAAAAAAAAAKAP//AAAAAAAAAAAKAAAAAAAAAAAAAAAKAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAAMAAAAAAAAAAAAAAAMAP//AAAAAAAAAAAMAP7/AAAAAAAAAAAMAAIAAAABAAAAADAKAAIAAAABAAAAADAMAPz/AAABAAAAAAANAPz/AAABAAAAAAAOAPz/AAABAAAAAAAPAPz/AAABAAAAAAAMAP3/AAAAAAAAAAAGAPv/AAABAAAAADAHAPv/AAABAAAAADAIAPv/AAABAAAAADAJAPv/AAABAAAAADAKAPv/AAABAAAAADALAPv/AAABAAAAADAMAPv/AAABAAAAADANAPv/AAABAAAAADAOAPv/AAABAAAAADAPAPv/AAABAAAAADAZAPb/AAABAAAAADAXAPb/AAABAAAAADAXAPX/AAAAAAAAAAAXAPT/AAAAAAAAAAAXAPP/AAAAAAAAAAAXAPL/AAAAAAAAAAAXAPH/AAAAAAAAAAAXAPD/AAAAAAAAAAAZAPX/AAAAAAAAAAAZAPT/AAAAAAAAAAAZAPP/AAAAAAAAAAAZAPL/AAAAAAAAAAAZAPH/AAAAAAAAAAAZAPD/AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAABAAAAADA=")
 
 [node name="BackgroundBlueSky" parent="Level" unique_id=383148712 instance=ExtResource("15_pgbyh")]
 
-[node name="TableMedium" type="Sprite2D" parent="Level" unique_id=1798133473]
-position = Vector2(1607, 532)
-texture = ExtResource("23_x7oem")
-
 [node name="Player" parent="." unique_id=451111052 instance=ExtResource("2_x25rp")]
+position = Vector2(2112, -3200)

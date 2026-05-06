@@ -53,5 +53,4 @@ offset_bottom = -42.0
 theme = ExtResource("3_p7hwu")
 max_value = 3.0
 step = 1.0
-value = 3.0
 show_percentage = false
