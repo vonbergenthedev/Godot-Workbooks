@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cduvywq42xys"]
+
+[ext_resource type="Theme" uid="uid://nsg81ixx6wlp" path="res://ui/end_screen.tres" id="1_4ksec"]
+[ext_resource type="Script" uid="uid://dphoia5pxwxr8" path="res://ui/end_menu.gd" id="1_bje0f"]
+
+[node name="Control" type="Control" unique_id=1666776828]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bje0f")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1871016308]
+self_modulate = Color(0.038397163, 0.038397174, 0.038397145, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -386.875
+offset_top = -207.0
+offset_right = 386.875
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=941932774]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_4ksec")
+alignment = 1
+
+[node name="EndScreenText" type="Label" parent="PanelContainer/VBoxContainer" unique_id=2144866361]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+text = "You have won!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeDisplay" type="Label" parent="PanelContainer/VBoxContainer" unique_id=392501034]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7670247, 2.5268644e-06, 9.62615e-07, 1)
+theme_override_font_sizes/font_size = 20
+text = "Time: XXs"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1010198862]
+unique_name_in_owner = true
+process_mode = 3
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Restart"
+
+[node name="QuitButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1230171334]
+unique_name_in_owner = true
+process_mode = 3
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Quit"

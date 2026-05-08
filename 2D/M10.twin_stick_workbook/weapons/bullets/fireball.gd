@@ -1,12 +1,11 @@
-class_name Bullet
+class_name Fireball
 extends Area2D
 
-@export var speed := 750.0
+@export var speed := 1000.0
 @export var damage := 1
 
-@onready var _collision_polygon_2d: CollisionPolygon2D = $CollisionPolygon2D
 
-var max_range := 1000.0
+var max_range := 800.0
 var _current_range := 0.0
 
 

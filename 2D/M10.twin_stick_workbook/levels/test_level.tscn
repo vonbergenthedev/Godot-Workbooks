@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://xxjmx5dahbbm"]
 
+[ext_resource type="Script" uid="uid://d12115q0pal3b" path="res://levels/test_level.gd" id="1_4b7wo"]
 [ext_resource type="PackedScene" uid="uid://cu2rb5dl4ljte" path="res://levels/rooms/room_a.tscn" id="1_x25rp"]
 [ext_resource type="PackedScene" uid="uid://43ku0c7m8gqa" path="res://player/player.tscn" id="2_x25rp"]
 [ext_resource type="PackedScene" uid="uid://c0i2gypp2yyrp" path="res://mobs/mob.tscn" id="3_gmgay"]
@@ -14,6 +15,7 @@
 [ext_resource type="Script" uid="uid://cgh7p1ci7r8lw" path="res://pickups/item.gd" id="9_wkb0e"]
 [ext_resource type="Texture2D" uid="uid://bmxcojfothkaq" path="res://pickups/pickup_heart_teal.png" id="10_paa45"]
 [ext_resource type="Texture2D" uid="uid://cliar8nx8kofc" path="res://levels/props/gems_yellow_5.png" id="10_vr6yy"]
+[ext_resource type="PackedScene" uid="uid://bqwac15wys7j3" path="res://teleporter/teleporter.tscn" id="10_x6sc1"]
 [ext_resource type="PackedScene" uid="uid://cq0mmphkbrvmm" path="res://levels/rooms/room_c.tscn" id="11_o5yuq"]
 [ext_resource type="Texture2D" uid="uid://culqdxmdoyqo2" path="res://levels/props/grass_rock_1.png" id="11_ra35m"]
 [ext_resource type="PackedScene" uid="uid://diw0kp1e3livt" path="res://levels/rooms/room_d.tscn" id="12_wjuib"]
@@ -46,6 +48,9 @@
 [ext_resource type="Texture2D" uid="uid://bf08g3uoob67d" path="res://levels/props/table_large_pots.png" id="37_kaa6k"]
 [ext_resource type="Texture2D" uid="uid://bw7o1r5k7d6cn" path="res://levels/props/table_medium_green.png" id="38_h8ll6"]
 [ext_resource type="Texture2D" uid="uid://cffu5ea6g2miv" path="res://levels/props/rocks_gems.png" id="39_4b7wo"]
+[ext_resource type="Texture2D" uid="uid://cqewufr1s28k5" path="res://levels/rooms/entrances/door_open_vertical.png" id="47_6wuxv"]
+[ext_resource type="Texture2D" uid="uid://bqopblk5ilols" path="res://levels/rooms/entrances/door_open.png" id="48_kaa6k"]
+[ext_resource type="PackedScene" uid="uid://cduvywq42xys" path="res://ui/end_menu.tscn" id="49_h8ll6"]
 
 [sub_resource type="Resource" id="Resource_0vv12"]
 script = ExtResource("5_o6mel")
@@ -71,6 +76,7 @@ stream = ExtResource("7_wndkh")
 metadata/_custom_type_script = "uid://g4pne0rjubpf"
 
 [node name="LevelOne" type="Node2D" unique_id=1328054590]
+script = ExtResource("1_4b7wo")
 
 [node name="Level" type="Node2D" parent="." unique_id=603003332]
 
@@ -84,6 +90,10 @@ possible_chest_items = Array[ExtResource("9_wkb0e")]([SubResource("Resource_0vv1
 [node name="Mob" parent="Level/StartingRoom" unique_id=1902314049 instance=ExtResource("3_gmgay")]
 position = Vector2(1016, 518)
 health = 3
+
+[node name="DoorOpenVertical" type="Sprite2D" parent="Level/StartingRoom" unique_id=1277838831]
+position = Vector2(1408, 575)
+texture = ExtResource("47_6wuxv")
 
 [node name="GemsYellow1" type="Sprite2D" parent="Level/StartingRoom" unique_id=1495687150]
 position = Vector2(163, 734)
@@ -180,6 +190,10 @@ item = SubResource("Resource_e7anx")
 position = Vector2(807, 1233)
 item = SubResource("Resource_e7anx")
 
+[node name="DoorOpen" type="Sprite2D" parent="Level/PowerupRoom" unique_id=25145799]
+position = Vector2(829, -9)
+texture = ExtResource("48_kaa6k")
+
 [node name="PotClayGems" type="Sprite2D" parent="Level/PowerupRoom" unique_id=1817561990]
 position = Vector2(159, 513)
 texture = ExtResource("15_ra35m")
@@ -259,6 +273,10 @@ texture = ExtResource("39_4b7wo")
 [node name="MidFight" parent="Level" unique_id=741471003 instance=ExtResource("9_0vv12")]
 position = Vector2(2170, -1095)
 
+[node name="DoorOpenVertical2" type="Sprite2D" parent="Level/MidFight" unique_id=1743967000]
+position = Vector2(-1, 577)
+texture = ExtResource("47_6wuxv")
+
 [node name="Mob2" parent="Level/MidFight" unique_id=12187259 instance=ExtResource("3_gmgay")]
 position = Vector2(580, 690)
 health = 3
@@ -267,20 +285,28 @@ health = 3
 position = Vector2(920, 166)
 health = 3
 
+[node name="DoorOpen" type="Sprite2D" parent="Level/MidFight" unique_id=800339151]
+position = Vector2(964, -1)
+texture = ExtResource("48_kaa6k")
+
 [node name="FinalRoom" parent="Level" unique_id=1584180166 instance=ExtResource("11_o5yuq")]
 position = Vector2(1914, -3589)
 
 [node name="Mob4" parent="Level/FinalRoom" unique_id=26330257 instance=ExtResource("3_gmgay")]
-position = Vector2(1114, 1070)
+position = Vector2(1039, 1053)
 health = 3
 
 [node name="Mob5" parent="Level/FinalRoom" unique_id=1837958519 instance=ExtResource("3_gmgay")]
-position = Vector2(555, 774)
+position = Vector2(573, 733)
 health = 3
 
 [node name="Mob6" parent="Level/FinalRoom" unique_id=2027624032 instance=ExtResource("3_gmgay")]
-position = Vector2(705, 157)
+position = Vector2(759, 215)
 health = 3
+
+[node name="EndTeleporter" parent="Level/FinalRoom" unique_id=460694403 instance=ExtResource("10_x6sc1")]
+unique_name_in_owner = true
+position = Vector2(873, 90)
 
 [node name="LevelBridges" type="Node2D" parent="Level" unique_id=2051234068]
 script = ExtResource("18_atrxo")
@@ -293,7 +319,13 @@ tile_map_data = PackedByteArray("AAADAAQAAAABAAEAAGADAAMAAAABAAEAAGADAAIAAAABAAE
 [node name="InvisibleWalls" parent="Level/LevelBridges" unique_id=439374130 instance=ExtResource("13_o5yuq")]
 tile_map_data = PackedByteArray("AAAGAPz/AAABAAAAAAAHAPz/AAABAAAAAAAIAPz/AAABAAAAAAAJAPz/AAABAAAAAAAKAPz/AAABAAAAAAAKAP3/AAAAAAAAAAAKAP7/AAAAAAAAAAAKAP//AAAAAAAAAAAKAAAAAAAAAAAAAAAKAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAAMAAAAAAAAAAAAAAAMAP//AAAAAAAAAAAMAP7/AAAAAAAAAAAMAAIAAAABAAAAADAKAAIAAAABAAAAADAMAPz/AAABAAAAAAANAPz/AAABAAAAAAAOAPz/AAABAAAAAAAPAPz/AAABAAAAAAAMAP3/AAAAAAAAAAAGAPv/AAABAAAAADAHAPv/AAABAAAAADAIAPv/AAABAAAAADAJAPv/AAABAAAAADAKAPv/AAABAAAAADALAPv/AAABAAAAADAMAPv/AAABAAAAADANAPv/AAABAAAAADAOAPv/AAABAAAAADAPAPv/AAABAAAAADAZAPb/AAABAAAAADAXAPb/AAABAAAAADAXAPX/AAAAAAAAAAAXAPT/AAAAAAAAAAAXAPP/AAAAAAAAAAAXAPL/AAAAAAAAAAAXAPH/AAAAAAAAAAAXAPD/AAAAAAAAAAAZAPX/AAAAAAAAAAAZAPT/AAAAAAAAAAAZAPP/AAAAAAAAAAAZAPL/AAAAAAAAAAAZAPH/AAAAAAAAAAAZAPD/AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAABAAAAADA=")
 
-[node name="BackgroundBlueSky" parent="Level" unique_id=383148712 instance=ExtResource("15_pgbyh")]
+[node name="BackgroundBlueSky" parent="Level/LevelBridges" unique_id=383148712 instance=ExtResource("15_pgbyh")]
+visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1879134935]
+
+[node name="EndMenu" parent="CanvasLayer" unique_id=1666776828 instance=ExtResource("49_h8ll6")]
+unique_name_in_owner = true
 
 [node name="Player" parent="." unique_id=451111052 instance=ExtResource("2_x25rp")]
-position = Vector2(2112, -3200)
+position = Vector2(-406, -768)

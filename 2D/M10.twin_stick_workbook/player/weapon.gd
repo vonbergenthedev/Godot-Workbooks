@@ -14,6 +14,10 @@ func _process(_delta: float) -> void:
 		
 			bullet.global_rotation = global_rotation
 			bullet.global_position = global_position
-			bullet.max_range = max_range
-			bullet.speed = max_bullet_speed
+			
+			## Availiable to change bullet behavior if weapon based changes are made.
+			## Fire Rate Powerup, Range Change, Etc.
+			# bullet.max_range = max_range
+			# bullet.speed = max_bullet_speed
+			
 			bullet.rotation += randf_range(-shot_angle, shot_angle)
