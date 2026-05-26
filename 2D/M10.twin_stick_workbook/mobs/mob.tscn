@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://nohjoiah3jgr" path="res://mobs/sword_inactive.png" id="1_bteyy"]
 [ext_resource type="Script" uid="uid://d1n20pec78ww8" path="res://mobs/mob.gd" id="1_p7hwu"]
 [ext_resource type="Theme" uid="uid://b04qhwbgn6r2s" path="res://mobs/mob_healthbar.tres" id="3_p7hwu"]
+[ext_resource type="AudioStream" uid="uid://dfc5tcrthtntk" path="res://mobs/hurt.wav" id="4_4p423"]
+[ext_resource type="AudioStream" uid="uid://cte8ddxd7o4de" path="res://mobs/kill.wav" id="5_cxx3d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fgbma"]
 radius = 315.0016
@@ -20,6 +22,7 @@ collision_layer = 4
 collision_mask = 75
 motion_mode = 1
 script = ExtResource("1_p7hwu")
+health = 3
 
 [node name="PlayerDetectionArea2D" type="Area2D" parent="." unique_id=499634609]
 
@@ -37,15 +40,16 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_fgbma")
 debug_color = Color(0.99726564, 0, 0.1793904, 0.41960785)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1717802974]
+[node name="MobCollision" type="CollisionShape2D" parent="." unique_id=1717802974]
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_p7hwu")
 
 [node name="DamageTimer" type="Timer" parent="." unique_id=1492861444]
-wait_time = 0.3
+wait_time = 1.5
 one_shot = true
 
 [node name="MobHealthbar" type="ProgressBar" parent="." unique_id=186382335]
+visible = false
 offset_left = -63.0
 offset_top = -59.0
 offset_right = 63.0
@@ -53,4 +57,11 @@ offset_bottom = -42.0
 theme = ExtResource("3_p7hwu")
 max_value = 3.0
 step = 1.0
+value = 3.0
 show_percentage = false
+
+[node name="MobHurt" type="AudioStreamPlayer2D" parent="." unique_id=386123228]
+stream = ExtResource("4_4p423")
+
+[node name="MobDie" type="AudioStreamPlayer2D" parent="." unique_id=849509631]
+stream = ExtResource("5_cxx3d")

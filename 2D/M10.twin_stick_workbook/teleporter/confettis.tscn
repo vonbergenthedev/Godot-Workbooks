@@ -38,7 +38,7 @@ emission_curve = SubResource("CurveTexture_inc6c")
 
 [node name="Confettis" type="GPUParticles2D" unique_id=1686574362]
 emitting = false
-amount = 200
+amount = 2000
 texture = ExtResource("1_y2fxp")
 lifetime = 1.5
 one_shot = true

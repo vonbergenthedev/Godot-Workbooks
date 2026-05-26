@@ -1,14 +1,14 @@
 @tool
 class_name Chest extends Area2D
 
+var _player_node_reference: Node = null
+var pickup = preload("res://pickups/pickup.tscn").instantiate()
+
+
 @export var possible_chest_items: Array[Item] = []: set = set_items
 
 
 @onready var _animation_player: AnimationPlayer = $AnimationPlayer
-
-
-var _player_node_reference: Node = null
-var pickup = preload("res://pickups/pickup.tscn").instantiate()
 
 
 func _ready() -> void:

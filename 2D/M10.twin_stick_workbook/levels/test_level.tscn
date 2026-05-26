@@ -51,6 +51,7 @@
 [ext_resource type="Texture2D" uid="uid://cqewufr1s28k5" path="res://levels/rooms/entrances/door_open_vertical.png" id="47_6wuxv"]
 [ext_resource type="Texture2D" uid="uid://bqopblk5ilols" path="res://levels/rooms/entrances/door_open.png" id="48_kaa6k"]
 [ext_resource type="PackedScene" uid="uid://cduvywq42xys" path="res://ui/end_menu.tscn" id="49_h8ll6"]
+[ext_resource type="AudioStream" uid="uid://cgkhr5s5txcxx" path="res://common/music/EZDNB2 (CC-BY Of Far Different Nature).ogg" id="52_x6sc1"]
 
 [sub_resource type="Resource" id="Resource_0vv12"]
 script = ExtResource("5_o6mel")
@@ -89,7 +90,6 @@ possible_chest_items = Array[ExtResource("9_wkb0e")]([SubResource("Resource_0vv1
 
 [node name="Mob" parent="Level/StartingRoom" unique_id=1902314049 instance=ExtResource("3_gmgay")]
 position = Vector2(1016, 518)
-health = 3
 
 [node name="DoorOpenVertical" type="Sprite2D" parent="Level/StartingRoom" unique_id=1277838831]
 position = Vector2(1408, 575)
@@ -279,11 +279,9 @@ texture = ExtResource("47_6wuxv")
 
 [node name="Mob2" parent="Level/MidFight" unique_id=12187259 instance=ExtResource("3_gmgay")]
 position = Vector2(580, 690)
-health = 3
 
 [node name="Mob3" parent="Level/MidFight" unique_id=1210222820 instance=ExtResource("3_gmgay")]
 position = Vector2(920, 166)
-health = 3
 
 [node name="DoorOpen" type="Sprite2D" parent="Level/MidFight" unique_id=800339151]
 position = Vector2(964, -1)
@@ -294,15 +292,12 @@ position = Vector2(1914, -3589)
 
 [node name="Mob4" parent="Level/FinalRoom" unique_id=26330257 instance=ExtResource("3_gmgay")]
 position = Vector2(1039, 1053)
-health = 3
 
 [node name="Mob5" parent="Level/FinalRoom" unique_id=1837958519 instance=ExtResource("3_gmgay")]
 position = Vector2(573, 733)
-health = 3
 
 [node name="Mob6" parent="Level/FinalRoom" unique_id=2027624032 instance=ExtResource("3_gmgay")]
 position = Vector2(759, 215)
-health = 3
 
 [node name="EndTeleporter" parent="Level/FinalRoom" unique_id=460694403 instance=ExtResource("10_x6sc1")]
 unique_name_in_owner = true
@@ -328,4 +323,8 @@ visible = false
 unique_name_in_owner = true
 
 [node name="Player" parent="." unique_id=451111052 instance=ExtResource("2_x25rp")]
-position = Vector2(-406, -768)
+position = Vector2(-361, -684)
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=2129225966]
+stream = ExtResource("52_x6sc1")
+volume_db = -30.0

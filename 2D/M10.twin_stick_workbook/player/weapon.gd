@@ -1,6 +1,11 @@
 extends Node2D
 
 @export var bullet_scene: PackedScene = null
+
+
+@onready var fire_weapon_sound: AudioStreamPlayer = $FireWeaponSound
+
+
 @export_range(0.0, 2000.0) var max_range := 2000.0
 @export_range(0.0, 3000.0) var max_bullet_speed := 1500.0
 @export_range(0.0, 15.0, 0.5, "radians_as_degrees") var shot_angle := 0.0
@@ -11,6 +16,7 @@ func _process(_delta: float) -> void:
 			var bullet = bullet_scene.instantiate()
 			
 			get_tree().current_scene.add_child(bullet)
+			fire_weapon_sound.play()
 		
 			bullet.global_rotation = global_rotation
 			bullet.global_position = global_position

@@ -8,10 +8,34 @@
 [ext_resource type="Script" uid="uid://mau11dj426mi" path="res://player/weapon.gd" id="6_rgyib"]
 [ext_resource type="Texture2D" uid="uid://dekkcmj408pvt" path="res://player/hand_fire.png" id="7_hg6s5"]
 [ext_resource type="PackedScene" uid="uid://cs55p4on85fs5" path="res://weapons/bullets/fireball.tscn" id="7_rgyib"]
+[ext_resource type="AudioStream" uid="uid://8k3b4dtgtm7h" path="res://weapons/shoot_fire.wav" id="8_8t03j"]
 [ext_resource type="Theme" uid="uid://brcnqki6hulye" path="res://player/player_healthbar.tres" id="9_hg6s5"]
+[ext_resource type="AudioStream" uid="uid://c6bk7awsqnbt8" path="res://player/pain_01.wav" id="11_wodsf"]
+[ext_resource type="AudioStream" uid="uid://deol7mqpv4xhy" path="res://player/pain_02.wav" id="12_32hag"]
+[ext_resource type="AudioStream" uid="uid://bv2sasgvsrp4i" path="res://player/pain_03.wav" id="13_tqiix"]
+[ext_resource type="AudioStream" uid="uid://17y53e55al8d" path="res://player/pain_04.wav" id="14_e7oew"]
+[ext_resource type="AudioStream" uid="uid://dgdkinlpjq4ob" path="res://player/pain_05.wav" id="15_c35mf"]
+[ext_resource type="AudioStream" uid="uid://ursqvcxb3uov" path="res://player/death_01.wav" id="16_e7oew"]
+[ext_resource type="AudioStream" uid="uid://b3w6lv1kglxf6" path="res://player/death_02.wav" id="17_c35mf"]
+[ext_resource type="AudioStream" uid="uid://c56hqbbb5ktp1" path="res://player/death_03.wav" id="18_65viv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8t03j"]
 radius = 21.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_65viv"]
+playback_mode = 1
+streams_count = 5
+stream_0/stream = ExtResource("11_wodsf")
+stream_1/stream = ExtResource("12_32hag")
+stream_2/stream = ExtResource("13_tqiix")
+stream_3/stream = ExtResource("14_e7oew")
+stream_4/stream = ExtResource("15_c35mf")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x7c3f"]
+streams_count = 3
+stream_0/stream = ExtResource("16_e7oew")
+stream_1/stream = ExtResource("17_c35mf")
+stream_2/stream = ExtResource("18_65viv")
 
 [node name="Player" type="CharacterBody2D" unique_id=451111052]
 collision_mask = 86
@@ -54,6 +78,9 @@ script = ExtResource("6_rgyib")
 bullet_scene = ExtResource("7_rgyib")
 shot_angle = 0.08726646259971647
 
+[node name="FireWeaponSound" type="AudioStreamPlayer" parent="WeaponPivot/WeaponAnchor/Weapon" unique_id=881898915]
+stream = ExtResource("8_8t03j")
+
 [node name="HandLeft" type="Sprite2D" parent="WeaponPivot/WeaponAnchor/Weapon" unique_id=1305847291]
 position = Vector2(4, -23.999985)
 rotation = -0.2617994
@@ -77,3 +104,9 @@ max_value = 10.0
 step = 1.0
 value = 10.0
 show_percentage = false
+
+[node name="PlayerDamage" type="AudioStreamPlayer" parent="." unique_id=191334629]
+stream = SubResource("AudioStreamRandomizer_65viv")
+
+[node name="PlayerDeath" type="AudioStreamPlayer" parent="." unique_id=1977728358]
+stream = SubResource("AudioStreamRandomizer_x7c3f")
