@@ -1,4 +1,8 @@
-## Utility script to handle paths and file names for practice and solution files.
+## Path utilities for converting between practice and solution file locations.
+##
+## This is a simple helper module that tracks the two folder used for practices
+## in course projects: one for practices (where students work) and one for
+## solutions.
 const Utils := preload("../gdquest_sparkly_bag/sparkly_bag_utils.gd")
 
 const RES := "res://"

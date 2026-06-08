@@ -1,3 +1,15 @@
+## Godot editor plugin that integrates the practice testing system into the
+## Godot editor.
+##
+## This plugin adds UI panels and tools to the Godot editor interface to see a
+## list of all available practices in the course (Practice Dock), automatically
+## run tests when opening a practice scene, get warnings when viewing solution
+## files (so you don't accidentally edit them), and hide solution files from the
+## editor's file browser to keep them organized and prevent students from seeing
+## them too easily.
+## 
+## The practice testing system is designed to create coding exercise using
+## practice solutions as the reference.
 @tool
 extends EditorPlugin
 

@@ -1,3 +1,7 @@
+## UI panel that automatically runs and displays test results for practice scenes (at runtime).
+##
+## Detects when a practice scene opens, loads the corresponding test.gd and solution,
+## runs all requirements and checks, then displays pass/fail results with hints.
 extends Control
 
 const Test := preload("test.gd")
@@ -56,6 +60,16 @@ var _practice_info := {}
 
 
 func _ready() -> void:
+	# We limit the frame rate to ensure some stability during testing. At
+	# high frame rates (e.g., over 200 FPS), we found that sometimes there are
+	# small discrepancies between the student practice and solution tests. This
+	# can cause practices that test the state of the game to fail systematically
+	# on setups with high refresh rates.
+	#
+	# Capping at 60 FPS is a good way to normalize the experience across
+	# different hardware.
+	Engine.max_fps = 60
+
 	var cmdline_args := OS.get_cmdline_args()
 	if DisplayServer.get_name() == "headless" or "--script" in cmdline_args or "-s" in cmdline_args:
 		queue_free()

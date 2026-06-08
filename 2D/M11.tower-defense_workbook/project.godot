@@ -8,10 +8,14 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="M11. Tower Defense (Workbook)"
-config/features=PackedStringArray("4.4")
+config/features=PackedStringArray("4.6")
 config/icon="res://icon.png"
 
 [debug]
@@ -34,6 +38,10 @@ project/assembly_name="M11. Tower Defense"
 [editor_plugins]
 
 enabled=PackedStringArray()
+
+[gdpractice]
+
+is_distributed_build=true
 
 [layer_names]
 

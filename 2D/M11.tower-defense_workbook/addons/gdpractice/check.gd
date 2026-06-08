@@ -1,3 +1,24 @@
+## This is a CI and command-line script to automatically test exercises in batch.
+##
+## It runs all practices in a course module and compares built practice files
+## against solution files to verify practices work correctly.
+##
+## This script:[br]
+## [br]
+## - Loads every practice and its solution from a Godot project with GDPractice[br]
+## - Runs the test requirements for each practice[br]
+## - Checks both the solution (should all pass) and generated practice start files (should not all pass)[br]
+## - Reports any test failures[br]
+##
+## Run this before shipping course materials to make sure all tests are set up correctly.
+##
+## You can run it from the command line from a Godot project's root folder like this:
+##
+## [codeblock]
+## godot --headless --script addons/gdpractice/check.gd
+## [/codeblock]
+##
+## Remove the --headless flag to see output in the Godot editor.
 extends SceneTree
 
 const Paths := preload("paths.gd")

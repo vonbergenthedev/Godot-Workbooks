@@ -1,5 +1,14 @@
-## This class is used by [b]instructors[/b] to validate practices based on a direct comparisson
-## with the solution.
+## Base class for writing tests that validate student practices against solutions.
+##
+## This is the test system that teachers use to create automated tests for
+## practices. To create practice tests, create a script that extends this class
+## and override virtual methods to define what students should do.
+##
+## This file:[br]
+## - Compares student practice code against your solution reference[br]
+## - Runs automated checks to verify the student completed the exercise correctly[br]
+## - Has helper methods to simplify common testing patterns[br]
+## - Reports when checks pass or fail
 extends Node
 
 

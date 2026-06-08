@@ -1,68 +1,69 @@
-## Build script that converts solutions into practices and optionally generates Godot project folders for course modules.
+## Command-line tool that generates practice files from solution code.
 ##
-## [b]Usage[/b]:
+## This is a command line build utility] that you run to automatically create
+## student practice files from solution code. It uses special comments in the
+## practice solution scripts to control what students see in their practice
+## starting files.
+##
+## It takes the solution code and creates corresponding starter practice files,
+## uses inline comments to decide what code to show or hide from students, can
+## optionally generate complete Godot project folders for distribution, and
+## preserves project structure and creates checksums to detect
+## modifications.
+##
+## Use it like this:
+##
 ## [codeblock]
-## godot --headless --script addons/gdquest_practice_framework/build.gd -- arg1 arg2 ...
+## godot --headless --script addons/gdpractice/build.gd -- --generate-practices
 ## [/codeblock]
 ##
-## Run with [code]--help[/code] to see the available arguments.
+## Run with the flag [code]--help[/code] to see all available options.
 ##
-## [b]Generating practice starting files with the build script[/b]:
+## [b]Comment syntax: How to create practice starting code[/b][br]
 ##
-## The build script also processes practice code lines by replacing them with the given
-## comments at the end of the line in [b]GDScript[/b] files.
+## You write the [b]complete solution[/b] in your solution file, then use
+## comments to tell the build script what to show students. This way, you
+## have a single source of truth.[br]
+##
+## Replace code like this:
 ##
 ## [codeblock]
 ## position += delta * velocity # position
 ## [/codeblock]
 ##
-## Results in the following practice code:
+## This shows students only the partial code in the starter files: [code]position[/code]
+##
+## Delete the line entirely like this:
 ##
 ## [codeblock]
-## position
+## return some_complex_calculation() #
 ## [/codeblock]
 ##
-## In some cases we want to remove the line completely for more complex code. Empty comments at
-## the end of the line result in deletion of the line in the practice GDScript file.
+## An empty comment deletes the whole line from the practice file.[br]
 ##
-## Furthermore, we can use a special syntax like [code]# >[/code] and [code]# <[/code] to indent
-## and respectively dedent the given line of code in the practice script, otherwise the indentation
-## is preserved:
+## Indent or dedent code: Use [code]# >[/code] to indent (move right) or [code]# <[/code]
+## to dedent (move left). You can repeat these symbols for multiple indentation
+## levels:
 ##
 ## [codeblock]
-## func generate_gems(columns: int, rows: int) -> void:
-##     # Add two nested loops to generate cell coordinates.
-##     # Generate the columns with the first loop and the rows with the second.
-##
-##     # You'll need to indent the lines below to be inside the inner loop block.
-##     # You can select the lines with the mouse and press Tab to do so.
-##     # Update the cell value to represent the cell coordinates on each loop iteration.
-##     for column in range(columns): #
-##         for row in range(rows): #
-##             var cell := Vector2(column, row) # << var cell := Vector2(0, 0)
-##             generate_one_gem(cell) # << generate_one_gem(cell)
+## for column in range(columns): #
+##     for row in range(rows): #
+##         var cell := Vector2(column, row) # << var cell := Vector2(0, 0)
+##         generate_one_gem(cell) # << generate_one_gem(cell)
 ## [/codeblock]
 ##
-## Results in the following practice code:
+## Students see this starting code with this indentation:
 ##
 ## [codeblock]
-## func generate_gems(columns: int, rows: int) -> void:
-##     # Add two nested loops to generate cell coordinates.
-##     # Generate the columns with the first loop and the rows with the second.
-##
-##     # You'll need to indent the lines below to be inside the inner loop block.
-##     # You can select the lines with the mouse and press Tab to do so.
-##     # Update the cell value to represent the cell coordinates on each loop iteration.
-##     var cell := Vector2(0, 0)
-##     generate_one_gem(cell)
+## var cell := Vector2(0, 0)
+## generate_one_gem(cell)
 ## [/codeblock]
 ##
-## [b]Note[/b] that:
-##
-## [b]Note[/b] that: [br]
-##
-## - Only-comment lines are also preserved in the practice. [br]
-## - The special [code]<[/code] and [code]>[/code] symbols can be repeated multiple times. [br]
+## Notes:[br]
+## [br]
+## - Lines that are only comments (no code) are always preserved in the practice[br]
+## - You can stack [code]<[/code] and [code]>[/code] symbols (e.g., [code]# >>>>[/code]) for multiple indent levels[br]
+## - Practice files are created in [b]res://practices[/b] while practice solutions stay in [b]res://addons/gdpractice/practice_solutions[/b][br]
 extends SceneTree
 
 const Paths := preload("paths.gd")
@@ -228,6 +229,10 @@ func build_project(suffix: String, output_path: String, exclude_patterns: Array[
 	var cfg = ConfigFile.new()
 	cfg.load(project_file_path)
 	cfg.set_value(APP_SECTION, APP_NAME_KEY, "%s (%s)" % [ProjectSettings.get_setting(APP_SECTION.path_join(APP_NAME_KEY)), suffix.capitalize()])
+
+	# We add a flag when we build a copy of the project to suppress warnings we only want to have during development.
+	cfg.set_value("gdpractice", "is_distributed_build", true)
+
 	# Here, we selectively remove GDPractice and its autoloads in both workbooks and solution projects
 	# This code makes sure that other autoloads and plugins used by projects are preserved.
 	# NOTE: since Godot 4.4 plugins are meant to load without errors even on first import,

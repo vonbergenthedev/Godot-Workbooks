@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://b5iik06y7nxib" path="res://addons/gdpractice/assets/gdquest_logo_gear.svg" id="3_m6wos"]
 
 [node name="GDQuest" type="PanelContainer"]
-offset_right = 418.0
-offset_bottom = 280.0
+offset_right = 461.0
+offset_bottom = 651.0
+size_flags_vertical = 3
 theme = ExtResource("1_cljkq")
 script = ExtResource("1_p3vi5")
 
@@ -64,16 +65,22 @@ theme_type_variation = &"LabelModule"
 text = "Test Book"
 uppercase = true
 
-[node name="PanelContainerPractices" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="PanelContainerPractices" type="PanelContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_type_variation = &"PanelContainerPractices"
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/PanelContainerPractices"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/PanelContainerPractices"]
 layout_mode = 2
 theme_type_variation = &"MarginContainerPractices"
 
-[node name="List" type="VBoxContainer" parent="MarginContainer/VBoxContainer/PanelContainerPractices/MarginContainer"]
+[node name="List" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/PanelContainerPractices/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"VBoxContainerPracticesList"

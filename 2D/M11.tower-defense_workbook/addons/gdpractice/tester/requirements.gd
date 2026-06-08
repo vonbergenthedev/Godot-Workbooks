@@ -1,3 +1,19 @@
+## Static utility for checking that practice and solution files have matching structure.
+##
+## NOTE: it's not currently used in the testing pipeline. The code is kept for future use.
+## See https://github.com/GDQuest/GDPractice/issues/16 for details.
+##
+## This is a proof of concept for a validation tool that verifies practice and
+## solution files have the same code structure. It is meant to ensure that when
+## you create a practice from a solution, or a student completes a practice,
+## interfaces match (nodes are the same, etc.)
+##
+## It implements functions to check if two scripts:[br]
+## - Methods: Both files have the same function signatures[br]
+## - Properties: Both files have the same member variables[br]
+## - Signals: Both files have the same custom signals[br]
+## - Constants: Both files have the same constant values[br]
+## - Nodes: Both scenes have the same node structure[br]
 const Paths := preload("../paths.gd")
 const Utils := preload("../../gdquest_sparkly_bag/sparkly_bag_utils.gd")
 
@@ -130,8 +146,9 @@ static func _check_scene_tree_proxy_items(practice_items: Array, solution_items:
 	return result
 
 
-# TODO: the proxy dictionary uses node paths as keys which might be too strict because it relies
-# on node names. Need a better solution to test for node types instead.
+# TODO: the proxy dictionary uses node paths as keys which is be too strict
+# because it relies on node names. Need a better solution to test for node types
+# instead.
 static func _get_scene_tree_proxy(state: SceneState) -> Dictionary:
 	var result := {}
 	for idx in range(state.get_node_count()):

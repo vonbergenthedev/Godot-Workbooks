@@ -126,7 +126,7 @@ func open_practice_scripts() -> void:
 	var root_script := scene_root.get_script()
 	if root_script:
 		EditorInterface.edit_script(root_script)
-	else:
+	elif not ProjectSettings.get_setting("gdpractice/is_distributed_build", false):
 		push_warning("No script found for practice '%s'. Add a script to the root node or specify scripts_to_open in the practice metadata." % practice_metadata.id)
 
 
