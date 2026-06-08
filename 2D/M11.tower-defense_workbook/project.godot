@@ -18,6 +18,11 @@ config/name="M11. Tower Defense (Workbook)"
 config/features=PackedStringArray("4.6")
 config/icon="res://icon.png"
 
+[autoload]
+
+UITestPanel="*uid://bnnxfl3thl8qk"
+Metadata="*uid://b720yrno37l7n"
+
 [debug]
 
 gdscript/warnings/return_value_discarded=false
@@ -37,7 +42,7 @@ project/assembly_name="M11. Tower Defense"
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/gdpractice/plugin.cfg", "res://addons/gdquest_colorpicker_presets/plugin.cfg")
 
 [gdpractice]
 

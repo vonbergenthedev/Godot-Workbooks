@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bdtknw27u8ldw"]
+
+[ext_resource type="Texture2D" uid="uid://c06dsq2gfbcd8" path="res://mobs/mouse_01.png" id="1_bteyy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fgbma"]
+radius = 43.0
+
+[node name="Mob" type="Area2D" unique_id=1411205282]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=145279189]
+texture = ExtResource("1_bteyy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=467079348]
+position = Vector2(5, 0)
+shape = SubResource("CircleShape2D_fgbma")
