@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://buxud23yyccyi"]
+[gd_resource type="TileSet" format=3 uid="uid://buxud23yyccyi"]
 
 [ext_resource type="Texture2D" uid="uid://bm5nxkq3f056o" path="res://map/towerdefense_tilemap.png" id="1"]
 

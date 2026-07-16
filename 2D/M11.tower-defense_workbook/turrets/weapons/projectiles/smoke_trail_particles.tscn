@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cvl201t68pnm7"]
+[gd_scene format=3 uid="uid://cvl201t68pnm7"]
 
 [ext_resource type="Texture2D" uid="uid://0bgaw6cyhrsb" path="res://turrets/weapons/particle_smoke.png" id="1_pbf0q"]
 
@@ -28,7 +28,7 @@ scale_max = 0.3
 scale_curve = SubResource("5")
 color_ramp = SubResource("3")
 
-[node name="SmokeTrailParticles" type="GPUParticles2D"]
+[node name="SmokeTrailParticles" type="GPUParticles2D" unique_id=1973627761]
 amount = 400
 texture = ExtResource("1_pbf0q")
 lifetime = 0.5

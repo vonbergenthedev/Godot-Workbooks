@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c3ere1qqhai67"]
+[gd_scene format=3 uid="uid://c3ere1qqhai67"]
 
 [ext_resource type="Theme" uid="uid://bk3rqtt0xeorm" path="res://addons/gdpractice/assets/theme.tres" id="1_6xxvo"]
 [ext_resource type="Script" uid="uid://c2tor0py8ohwc" path="res://addons/gdpractice/tester/input_panel_container/input_panel_container.gd" id="2_a6rqi"]
@@ -380,11 +380,11 @@ _data = {
 &"warn": SubResource("Animation_uept0")
 }
 
-[node name="InputPanelContainer" type="PanelContainer"]
+[node name="InputPanelContainer" type="PanelContainer" unique_id=1357204290]
 theme = ExtResource("1_6xxvo")
 script = ExtResource("2_a6rqi")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1460998742]
 visible = false
 layout_mode = 2
 texture = ExtResource("3_08hwi")
@@ -395,36 +395,36 @@ patch_margin_bottom = 22
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=592726077]
 layout_mode = 2
 theme_type_variation = &"MarginContainerInnerPractice"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1945189403]
 layout_mode = 2
 theme_type_variation = &"HBoxContainerTesterInput"
 
-[node name="InputFeedbackUI" parent="MarginContainer/HBoxContainer" instance=ExtResource("4_ulrf1")]
+[node name="InputFeedbackUI" parent="MarginContainer/HBoxContainer" unique_id=715823143 instance=ExtResource("4_ulrf1")]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 10
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=776310317]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="LabelTitle" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1102397862]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LabelTitle" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=350497756]
 layout_mode = 2
 theme_type_variation = &"LabelTesterInputSafe"
 text = "OKAY!"
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1345862758]
 layout_mode = 2
 texture = ExtResource("5_bslg6")
 stretch_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=21195430]
 custom_minimum_size = Vector2(308, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -435,9 +435,7 @@ text = "[i][b]ENJOY PLAYING YOUR OWN GAME![/b] YOU EARNED IT![/i]"
 fit_content = true
 scroll_active = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=524735958]
 unique_name_in_owner = true
-libraries = {
-"": SubResource("AnimationLibrary_d7n6m")
-}
-autoplay = "off"
+libraries/ = SubResource("AnimationLibrary_d7n6m")
+autoplay = &"off"

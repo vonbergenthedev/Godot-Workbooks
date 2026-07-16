@@ -7,12 +7,13 @@
 ## files (so you don't accidentally edit them), and hide solution files from the
 ## editor's file browser to keep them organized and prevent students from seeing
 ## them too easily.
-## 
+##
 ## The practice testing system is designed to create coding exercise using
 ## practice solutions as the reference.
 @tool
 extends EditorPlugin
 
+const Build := preload("build.gd")
 const Paths := preload("paths.gd")
 const UITestPanel := preload("tester/ui_test_panel.gd")
 const UIPracticeDock := preload("ui/ui_practice_dock.gd")
@@ -41,6 +42,8 @@ var filesystem_dock_trees: Array[Tree] = []
 
 
 func _enter_tree() -> void:
+	Build.create_instance()
+
 	var base_control := EditorInterface.get_base_control()
 	if Paths.SOLUTIONS_PATH.begins_with("res://addons"):
 		filesystem_dock_trees.assign(EditorInterface.get_file_system_dock().find_children("", "Tree", true, false))
@@ -83,6 +86,8 @@ func _exit_tree() -> void:
 
 	for key: String in AUTOLOADS:
 		remove_autoload_singleton(key)
+
+	Build.free_instance()
 
 
 func _process(_delta: float) -> void:

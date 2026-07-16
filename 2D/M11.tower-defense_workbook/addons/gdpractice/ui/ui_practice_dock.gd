@@ -4,21 +4,17 @@ extends PanelContainer
 signal metadata_refreshed
 
 const UISelectablePractice := preload("ui_selectable_practice.gd")
+const UISelectablePracticePackedScene := preload("ui_selectable_practice.tscn")
 
 const DB := preload("../db/db.gd")
-const Build := preload("../build.gd")
 const Paths := preload("../paths.gd")
 const ThemeUtils := preload("../../gdquest_theme_utils/theme_utils.gd")
 const Metadata := preload(Paths.SOLUTIONS_PATH + "/metadata.gd")
-
 const PracticeMetadata := Metadata.PracticeMetadata
-
-const UISelectablePracticePackedScene := preload("ui_selectable_practice.tscn")
 
 const METADATA_PATH := "res://addons/gdpractice/practice_solutions/metadata.gd"
 
 var metadata_modified_time := -1
-var build := Build.new()
 
 @onready var list: VBoxContainer = %List
 @onready var module_labels: Array[Label] = [%LabelModuleNumber, %LabelModuleName]

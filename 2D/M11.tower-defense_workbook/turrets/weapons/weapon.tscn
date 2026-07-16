@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://1xjvb5ywc5dx"]
-
-[ext_resource type="Script" uid="uid://d0uxx0ojb2e4k" path="res://turrets/weapons/weapon.gd" id="1_bcaef"]
-
-[node name="Weapon" type="Sprite2D" unique_id=126371188]
-script = ExtResource("1_bcaef")

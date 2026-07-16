@@ -22,7 +22,6 @@ const CHECKBOX_TEXTURES := {
 }
 
 static var button_group := ButtonGroup.new()
-static var build := Build.new()
 
 var practice_metadata: PracticeMetadata = null
 
@@ -146,7 +145,7 @@ func reset_practice() -> void:
 
 		# Force rebuild the practice to not only update practice files but also
 		# update the MD5 checksums stored in dotfiles
-		build.build_practice(solution_dir_name, true)
+		Build.get_instance().build_practice(solution_dir_name, true)
 		update(db.progress)
 		reset_accept_dialog.visible = true
 		reset_button.visible = false

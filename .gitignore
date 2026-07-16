@@ -16,3 +16,6 @@ export_credentials.cfg
 data_*/
 mono_crash.*.json
 2D/M10.twin_stick_workbook/export_presets.cfg
+
+# User-specific ignores
+Backup_NewVersions/

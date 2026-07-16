@@ -1,6 +1,6 @@
 ## Command-line tool that generates practice files from solution code.
 ##
-## This is a command line build utility] that you run to automatically create
+## This is a command line build utility that you run to automatically create
 ## student practice files from solution code. It uses special comments in the
 ## practice solution scripts to control what students see in their practice
 ## starting files.
@@ -88,7 +88,34 @@ const ReturnCode = Utils.ReturnCode
 var regex_line := RegEx.create_from_string(r"^(\h*)(.*)#\h*(.*)$")
 var regex_shift := RegEx.create_from_string(r"^([<>]+)\h*(.*)")
 var regex_uid := RegEx.create_from_string(r'\s*uid=".*?"')
+var regex_anchor := RegEx.create_from_string(r"^\h*#\h*(ANCHOR|END)\b.*$")
 
+
+# Static access for API.
+
+static var _instance: SceneTree = null
+
+
+static func get_instance() -> SceneTree:
+	return _instance
+
+
+static func create_instance() -> void:
+	if is_instance_valid(_instance):
+		push_error("Build: Trying to create a new static instance, but an instance already exists.")
+		return
+
+	_instance = new()
+
+
+static func free_instance() -> void:
+	if is_instance_valid(_instance):
+		_instance.free()
+
+	_instance = null
+
+
+# Builder CLI tool.
 
 func _init() -> void:
 	const ARG_GENERATE_PROJECT_WORKBOOK := ["-w", "--generate-project-workbook", "Generates a Godot project folder for the lesson module and practices start files."]
@@ -219,9 +246,12 @@ func build_project(suffix: String, output_path: String, exclude_patterns: Array[
 
 		var extension := source_file_path.get_extension()
 		var do_replace := (suffix == "workbook" and extension in REPLACE_EXTS)
-		if do_replace:
+		if do_replace or extension == "gd":
 			var contents := FileAccess.get_file_as_string(destination_file_path)
-			contents = contents.replace(Paths.SOLUTIONS_PATH, solution_dir_path)
+			if do_replace:
+				contents = contents.replace(Paths.SOLUTIONS_PATH, solution_dir_path)
+			if extension == "gd":
+				contents = _strip_anchor_comments(contents)
 			FileAccess.open(destination_file_path, FileAccess.WRITE).store_string(contents)
 
 	# Clean up the project.godot file. Remove enabled plugins and autoloads and update the project name.
@@ -370,6 +400,7 @@ func build_practice(dir_name: StringName, is_forced := false) -> ReturnCode:
 			var practice_packed_scene := PackedScene.new()
 			practice_packed_scene.pack(solution_scene)
 			ResourceSaver.save(practice_packed_scene, practice_file_path)
+			solution_scene.queue_free()
 			was_copied = true
 
 		if not was_copied:
@@ -449,3 +480,16 @@ func _process_tabs(prefix: String, line: String) -> String:
 			tabs += DENTS[shift]
 		line = regex_shift_match.strings[2]
 	return "\t".repeat(tabs) + line
+
+
+## Removes #ANCHOR: and #END: comment lines from GDScript source.
+##
+## These lines are part of our build tools and should not be in
+## distributed projects (workbook or solutions).
+func _strip_anchor_comments(contents: String) -> String:
+	var lines := contents.split("\n")
+	var filtered: PackedStringArray = []
+	for line in lines:
+		if regex_anchor.search(line) == null:
+			filtered.append(line)
+	return "\n".join(filtered)

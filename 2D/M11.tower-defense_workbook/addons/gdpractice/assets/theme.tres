@@ -28,22 +28,22 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jf6gu"]
-bg_color = Color(0.0745098, 0.0352941, 0.14902, 1)
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.207843, 0.101961, 0.384314, 1)
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-anti_aliasing = false
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mq11r"]
 bg_color = Color(0.0745098, 0.0352941, 0.14902, 1)
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.552941, 0.0980392, 0.843137, 1)
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jf6gu"]
+bg_color = Color(0.0745098, 0.0352941, 0.14902, 1)
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.207843, 0.101961, 0.384314, 1)
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 anti_aliasing = false
@@ -310,6 +310,7 @@ default_font_size = 14
 ButtonPractice/base_type = &"Button"
 ButtonPractice/styles/focus = SubResource("StyleBoxFlat_kgui7")
 ButtonPractice/styles/hover = SubResource("StyleBoxFlat_pwgsg")
+ButtonPractice/styles/hover_pressed = SubResource("StyleBoxFlat_mq11r")
 ButtonPractice/styles/normal = SubResource("StyleBoxFlat_jf6gu")
 ButtonPractice/styles/pressed = SubResource("StyleBoxFlat_mq11r")
 ButtonReset/base_type = &"Button"

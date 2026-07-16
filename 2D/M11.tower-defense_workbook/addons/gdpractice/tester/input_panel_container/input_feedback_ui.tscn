@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d06tbfjylfmn4"]
+[gd_scene format=3 uid="uid://d06tbfjylfmn4"]
 
 [ext_resource type="Texture2D" uid="uid://b4joorlr8jn0j" path="res://addons/gdpractice/assets/input_arrow.svg" id="1_eb8ki"]
 [ext_resource type="Theme" uid="uid://bk3rqtt0xeorm" path="res://addons/gdpractice/assets/theme.tres" id="1_wgobd"]
@@ -13,7 +13,7 @@ corner_radius_top_right = 7
 corner_radius_bottom_right = 7
 corner_radius_bottom_left = 7
 
-[node name="InputFeedbackUI" type="Control"]
+[node name="InputFeedbackUI" type="Control" unique_id=1340749866]
 custom_minimum_size = Vector2(94, 94)
 layout_mode = 3
 anchors_preset = 0
@@ -22,7 +22,7 @@ offset_bottom = 94.0
 theme = ExtResource("1_wgobd")
 script = ExtResource("2_4xmn8")
 
-[node name="ArrowLeftTextureRect" type="TextureRect" parent="."]
+[node name="ArrowLeftTextureRect" type="TextureRect" parent="." unique_id=224007607]
 unique_name_in_owner = true
 self_modulate = Color(0.533333, 0.486275, 0.615686, 1)
 custom_minimum_size = Vector2(94, 94)
@@ -43,7 +43,7 @@ texture = ExtResource("1_eb8ki")
 expand_mode = 1
 flip_h = true
 
-[node name="ArrowRightTextureRect" type="TextureRect" parent="."]
+[node name="ArrowRightTextureRect" type="TextureRect" parent="." unique_id=1038947364]
 unique_name_in_owner = true
 self_modulate = Color(0.533333, 0.486275, 0.615686, 1)
 custom_minimum_size = Vector2(94, 94)
@@ -63,7 +63,7 @@ pivot_offset = Vector2(47, 47)
 texture = ExtResource("1_eb8ki")
 expand_mode = 1
 
-[node name="ArrowDownTextureRect" type="TextureRect" parent="."]
+[node name="ArrowDownTextureRect" type="TextureRect" parent="." unique_id=1207683630]
 unique_name_in_owner = true
 self_modulate = Color(0.533333, 0.486275, 0.615686, 1)
 custom_minimum_size = Vector2(94, 94)
@@ -84,7 +84,7 @@ pivot_offset = Vector2(47, 47)
 texture = ExtResource("1_eb8ki")
 expand_mode = 1
 
-[node name="ArrowUpTextureRect" type="TextureRect" parent="."]
+[node name="ArrowUpTextureRect" type="TextureRect" parent="." unique_id=1771181919]
 unique_name_in_owner = true
 self_modulate = Color(0.533333, 0.486275, 0.615686, 1)
 custom_minimum_size = Vector2(94, 94)
@@ -106,7 +106,7 @@ texture = ExtResource("1_eb8ki")
 expand_mode = 1
 flip_h = true
 
-[node name="CirclePanel" type="Panel" parent="."]
+[node name="CirclePanel" type="Panel" parent="." unique_id=590297787]
 unique_name_in_owner = true
 self_modulate = Color(0.533333, 0.486275, 0.615686, 1)
 custom_minimum_size = Vector2(18, 18)
@@ -124,7 +124,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_rrug3")
 
-[node name="KeyPanelContainer" type="PanelContainer" parent="."]
+[node name="KeyPanelContainer" type="PanelContainer" parent="." unique_id=944359796]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(18, 18)
@@ -142,7 +142,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"PanelContainerInputFeedback"
 
-[node name="KeyLabel" type="Label" parent="KeyPanelContainer"]
+[node name="KeyLabel" type="Label" parent="KeyPanelContainer" unique_id=1295383629]
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"LabelInputFeedback"
@@ -150,7 +150,7 @@ text = "K"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MouseTextureRect" type="TextureRect" parent="."]
+[node name="MouseTextureRect" type="TextureRect" parent="." unique_id=1995908710]
 unique_name_in_owner = true
 visible = false
 self_modulate = Color(0.533333, 0.486275, 0.615686, 1)
@@ -171,7 +171,7 @@ texture = ExtResource("3_d6t12")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="MouseButtonTextureRect" type="TextureRect" parent="MouseTextureRect"]
+[node name="MouseButtonTextureRect" type="TextureRect" parent="MouseTextureRect" unique_id=2045709994]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(35, 35)
 layout_mode = 1
