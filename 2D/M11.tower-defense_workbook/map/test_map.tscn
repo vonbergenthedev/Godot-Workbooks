@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bq3t44m6prk6o"]
+
+[ext_resource type="Texture2D" uid="uid://bm5nxkq3f056o" path="res://map/towerdefense_tilemap.png" id="1_np538"]
+[ext_resource type="PackedScene" uid="uid://vjvf6v15frgq" path="res://turrets/weapons/projectiles/simple_rocket.tscn" id="2_r1p3x"]
+
+[node name="TestMap" type="Sprite2D" unique_id=1508498781]
+texture = ExtResource("1_np538")
+
+[node name="SimpleRocket" parent="." unique_id=1811846867 instance=ExtResource("2_r1p3x")]
+position = Vector2(-562, -86)

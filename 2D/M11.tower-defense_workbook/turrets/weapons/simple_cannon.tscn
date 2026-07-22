@@ -2,12 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cv328i4tw2cc1" path="res://turrets/weapons/simple_cannon.png" id="1_5dibf"]
 [ext_resource type="Script" uid="uid://b5mccsiaik7uy" path="res://turrets/weapons/simple_cannon.gd" id="1_q2m6g"]
-[ext_resource type="PackedScene" uid="uid://bdtknw27u8ldw" path="res://mobs/mob.tscn" id="3_igcxb"]
 
 [node name="SimpleCannon" type="Sprite2D" unique_id=1651624550]
 texture = ExtResource("1_5dibf")
 script = ExtResource("1_q2m6g")
-
-[node name="Mob" parent="." unique_id=1027197698 instance=ExtResource("3_igcxb")]
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=4967329]
