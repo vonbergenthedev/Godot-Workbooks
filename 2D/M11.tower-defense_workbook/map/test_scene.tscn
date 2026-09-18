@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bq3t44m6prk6o"]
+
+[ext_resource type="Script" uid="uid://cxuhdjo6o7m3w" path="res://map/test_scene.gd" id="1_0knj2"]
+[ext_resource type="PackedScene" uid="uid://dpa8wqpmoehl3" path="res://turrets/weapons/simple_cannon.tscn" id="2_efn1f"]
+[ext_resource type="PackedScene" uid="uid://0jv6nxl5hod4" path="res://mobs/default_mob.tscn" id="3_3wrpi"]
+
+[node name="TestScene" type="Node2D" unique_id=287378881]
+script = ExtResource("1_0knj2")
+
+[node name="SimpleCannon" parent="." unique_id=898449622 instance=ExtResource("2_efn1f")]
+
+[node name="Camera2D" type="Camera2D" parent="SimpleCannon" unique_id=1805203429]
+
+[node name="DefaultMob" parent="." unique_id=859508622 instance=ExtResource("3_3wrpi")]
+position = Vector2(447, -292)

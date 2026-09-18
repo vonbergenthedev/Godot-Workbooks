@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://0jv6nxl5hod4"]
+
+[ext_resource type="Texture2D" uid="uid://c06dsq2gfbcd8" path="res://mobs/mouse_01.png" id="1_bdpnj"]
+[ext_resource type="Script" uid="uid://55j3jpgfub75" path="res://mobs/default_mob.gd" id="1_c1h0a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1da1j"]
+radius = 43.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_biab2"]
+bg_color = Color(0.24705882, 0.16470589, 0.44313726, 0.57254905)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvc7a"]
+bg_color = Color(0.38039216, 0.80784315, 0.02745098, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Theme" id="Theme_1da1j"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_biab2")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_dvc7a")
+
+[node name="DefaultMob" type="Area2D" unique_id=859508622]
+script = ExtResource("1_c1h0a")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=649552533]
+texture = ExtResource("1_bdpnj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1540932352]
+position = Vector2(4, 0)
+shape = SubResource("CircleShape2D_1da1j")
+debug_color = Color(0.86812305, 0.3315123, 0.33081844, 0.41960785)
+
+[node name="BarPivot" type="Node2D" parent="." unique_id=2066226072]
+unique_name_in_owner = true
+
+[node name="HealthBar" type="ProgressBar" parent="BarPivot" unique_id=312693935]
+unique_name_in_owner = true
+offset_left = -58.0
+offset_top = -72.0
+offset_right = 60.0
+offset_bottom = -59.0
+theme = SubResource("Theme_1da1j")
+step = 0.0
+show_percentage = false
