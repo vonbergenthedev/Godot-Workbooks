@@ -9,7 +9,7 @@ class_name MobSpawner extends Node2D
 @export var mob_packed_scene := preload("res://mobs/default_mob.tscn")
 ## The number of mobs this spawner will spawn in total.
 ## Mobs will spawn one by one until this counter reaches 0.
-@export var mobs_count := 10
+@export var mobs_count := 15
 @export var spawn_interval := 1.0
 
 var _timer := Timer.new()

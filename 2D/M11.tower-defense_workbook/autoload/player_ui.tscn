@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://b5ysmuo2bux0t" path="res://autoload/player_ui.gd" id="1_jc508"]
 [ext_resource type="Texture2D" uid="uid://cr7d6dy88ohwf" path="res://ui/health_bar_background.png" id="1_rd8mu"]
 [ext_resource type="Texture2D" uid="uid://ofew82gbqai4" path="res://ui/heart.png" id="3_3miud"]
+[ext_resource type="Theme" uid="uid://b8o6e156sphdf" path="res://themes/GameOverButton.tres" id="4_3miud"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1da1j"]
+font_size = 72
 
 [node name="Control" type="Control" unique_id=1345580177]
 z_index = 100
@@ -10,10 +14,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = 5.0
-offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -68,3 +68,72 @@ texture = ExtResource("3_3miud")
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("3_3miud")
+
+[node name="GameOverScreen" type="ColorRect" parent="." unique_id=1418428540]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18039216, 0.18039216, 0.18039216, 0.78431374)
+
+[node name="MenuColorRect" type="ColorRect" parent="GameOverScreen" unique_id=880451864]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -356.0
+offset_top = -202.0
+offset_right = 356.0
+offset_bottom = 189.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12955853, 0.12955844, 0.12955841, 0.78431374)
+
+[node name="GameOverTextLabel" type="Label" parent="GameOverScreen/MenuColorRect" unique_id=2108349513]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -205.0
+offset_top = 61.0
+offset_right = 205.0
+offset_bottom = 160.0
+grow_horizontal = 2
+text = "Game Over!"
+label_settings = SubResource("LabelSettings_1da1j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverScreen/MenuColorRect" unique_id=834499350]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -94.0
+offset_top = -187.0
+offset_right = 94.0
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 8
+
+[node name="RestartButton" type="Button" parent="GameOverScreen/MenuColorRect/VBoxContainer" unique_id=146745633]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("4_3miud")
+text = "Restart"
+
+[node name="QuitButton" type="Button" parent="GameOverScreen/MenuColorRect/VBoxContainer" unique_id=1180355277]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("4_3miud")
+text = "Quit"
